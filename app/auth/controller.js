@@ -29,65 +29,85 @@ const localStrategy = async (email, password, done) => {
         let user = 
         await User
         .findOne({email})
-        .select('__v -createdAt -updatedAt -cart_items -token');
+        .select('-createdAt -updatedAt -cart_items -token');
     if(!user) return done();
     if(bcrypt.compareSync(password, user.password)){
         ( {password, ...userWithoutPassword} = user.toJSON() );
         return done(null, userWithoutPassword);
     }
 } catch (err) {
-    done(err);
+    done(err, null);
 }
     done();
 }
 
 const login = async (req, res, next) => {
-    passport.authenticate('local', async function(err, user) {
-        if(err) return next(err);
+    passport.authenticate('local', async function (err, user) {
+        if (err) return next(err);
 
-        if(!user) return res.json({ error: 1, message: 'email / password not found' })
+        if (!user) return res.json({ error: 1, message: 'email / password not found' });
 
         let signed = jwt.sign(user, config.secretKey);
 
-        await User.findByIdAndUpdate(user._id, {$push: {token: signed}});
+        await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
 
-            res.json({
-                message: 'login success',
-                user, 
-                token: signed
-            })
-        })(req, res, next)
-}
+        return res.json({
+            message: 'login success',
+            user,
+            token: signed
+        });
+    })(req, res, next);
+};
 
 
-const logout = async (req, res, next) => {
+
+const logout = (req, res, next) => {
     let token = getToken(req);
 
-    try {
-        let user = await User.findOneAndUpdate(
-            { token: { $in: [token] } },
-            { $pull: { token: token } },
-            { new: true }
-        );
+    let user = User.findOneAndUpdate({token: {$in: [token]}}, {$pull: {token: token}}, {useFindAndModify: false});
 
-        if (!token || !user) {
-            return res.json({
-                error: 1,
-                message: 'No User Found'
-            });
-        }
-
-        return res.json({
-            error: 0,
-            message: 'Logout Success'
-        });
-    } catch (err) {
-        return res.json({
+    if (!token || !user) {
+         res.json({
             error: 1,
-            message: 'Error occurred while logging out'
+            message: 'No User Found'
         });
     }
+
+    return res.json({
+        error: 0,
+        message: 'Logout Success'
+    });
 }
+
+    // let user = User.findOneAndUpdate(
+    //     {token: {$in: [token]}}, 
+    //     {$pull: {token: token}}, 
+    //     {useFindAndModify: false});
+
+    // try {
+    //     let user = await User.findOneAndUpdate(
+    //         { token: { $in: [token] } },
+    //         { $pull: { token: token } },
+    //         {useFindAndModify: false});
+
+    //     if (!token || !user) {
+    //         return res.json({
+    //             error: 1,
+    //             message: 'No User Found'
+    //         });
+    //     }
+
+    //     return res.json({
+    //         error: 0,
+    //         message: 'Logout Success'
+    //     });
+    // } catch (err) {
+    //     return res.json({
+    //         error: 1,
+    //         message: 'Error occurred while logging out'
+    //     });
+    // }
+
 
 
 const me = (req, res, next) => {
@@ -104,5 +124,7 @@ module.exports = {
     register,
     localStrategy,
     login,
-    logout
+    logout,
+    me
+
 }
