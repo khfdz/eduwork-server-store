@@ -1,0 +1,102 @@
+/* card.css */
+
+.recomended{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.card {
+    margin-left: 30px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 280px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px -15px;
+    border-style: none;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    display: flex;
+    margin-top: -80px;
+    border-radius: 20px;
+    box-shadow: 1px 10px 30px -10px;
+}
+
+.card-body {
+    
+}   
+
+.card-title {
+    text-align: left;
+    align-items: left;   
+    margin-top: 10px;
+    font-weight: bolder;
+    font-size: 23px;
+}
+
+.card-text {
+    text-align: left;
+    align-items: center;   
+}
+
+.tags {
+    margin-top: 20px;
+    display: flex;
+}
+
+.price {
+    font-weight: bolder;
+    margin-left: 0px;
+    font-size: 20px;
+    margin-top: 110px;
+}
+
+.tagCard{
+    display: flex;
+    margin-top: -120px;
+    border: none;
+    border-radius: 20px;
+    width: 70px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+   
+}
+
+.tags .badge {
+    margin-right: 5px;
+}
+
+
+.carto {
+    background-color: #e52269;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    margin-left: 210px;
+    margin-top: -50px;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+}
+
+.seeMore {
+    background-color: #e52269;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    display: flex;
+    margin-left: 560px;
+    margin-top: 20px;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}

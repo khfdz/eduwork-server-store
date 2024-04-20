@@ -3,7 +3,7 @@ const invoiceController = require('./controller');
 
 router.get(
     '/invoices',
-    invoiceController.index
+    invoiceController.show
 );
 
 module.exports = router

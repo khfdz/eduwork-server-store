@@ -1,0 +1,128 @@
+.orderListRow {
+    display: flex;
+    margin-left: 140px;
+}
+
+.orderList{
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+.orderListTanggal {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.orderListLayer1 {
+    background-color: #eff0f2;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    width: 1000px;
+    flex-direction: column;
+}
+
+.orderListLayer2 {
+    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 640px;
+    height: 180px;
+    box-shadow: 5px 10px 20px -5px;
+}
+
+.orderListImage {
+    width: 200px; /* Sesuaikan ukuran yang diinginkan */
+    border-radius: 30px;
+    box-shadow: 5px 10px 20px -10px;
+    
+  }
+  
+  .orderListText {
+    font-size: 20px; /* Sesuaikan ukuran yang diinginkan */
+    margin-left: 20px;
+  }
+
+  .orderListJudul {
+    font-size: 20px;
+    font-weight: bolder
+  }
+
+  .orderListHarga {
+    font-weight: bolder
+  }
+
+  .orderListInput {
+    box-shadow: 0px 10px 30px -10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    padding-left: 20px;
+    height: 30px;
+    width: 200px;
+  }
+
+  .quantityControl {
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+.quantity{
+    margin-top: -500px;
+}
+
+.quantityText {
+    margin-top: -30px;
+    font-size: 40px;
+}
+
+.quantityButton1 {
+    width: 30px;
+    height: 30px;
+    background-color: #e52269;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-right: 5px;
+}
+
+.quantityButton2 {
+    width: 30px;
+    height: 30px;
+    background-color: #e52269;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.orderListLayer3 {
+    margin-top: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    width: 640px;
+    box-shadow: 5px 10px 20px -5px;
+}
+
+.orderListGaris {
+    margin-top: 10px;
+    border: 2px black solid;
+}
+
+.orderListButton {
+    background-color: #e52269;
+    color: white;
+    border: none;
+    font-size: 22px;
+    font-weight: bolder;
+    height: 45px;
+
+    border-radius: 20px;
+    margin-top: 20px;
+}
