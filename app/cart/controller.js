@@ -65,8 +65,31 @@ const index = async (req, res, next) => {
         next(err);
     }
 }
+const store = async (req, res, next) => {
+    try {
+        const { product, qty } = req.body;
+        const newCartItem = new CartItem({
+            product,
+            qty,
+            user: req.user._id
+        });
+        await newCartItem.save();
+        return res.json(newCartItem);
+    } catch (err) {
+        if (err && err.name === 'ValidationError') {
+            return res.json({
+                error: 1,
+                message: err.message,
+                fields: err.errors
+            });
+        }
+        next(err);
+    }
+};
+
 
 module.exports = {
     update,
-    index
+    index,
+    store
 }

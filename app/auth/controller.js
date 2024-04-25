@@ -79,37 +79,6 @@ const logout = (req, res, next) => {
     });
 }
 
-    // let user = User.findOneAndUpdate(
-    //     {token: {$in: [token]}}, 
-    //     {$pull: {token: token}}, 
-    //     {useFindAndModify: false});
-
-    // try {
-    //     let user = await User.findOneAndUpdate(
-    //         { token: { $in: [token] } },
-    //         { $pull: { token: token } },
-    //         {useFindAndModify: false});
-
-    //     if (!token || !user) {
-    //         return res.json({
-    //             error: 1,
-    //             message: 'No User Found'
-    //         });
-    //     }
-
-    //     return res.json({
-    //         error: 0,
-    //         message: 'Logout Success'
-    //     });
-    // } catch (err) {
-    //     return res.json({
-    //         error: 1,
-    //         message: 'Error occurred while logging out'
-    //     });
-    // }
-
-
-
 const me = (req, res, next) => {
     if(!req.user) {
         res.json({
@@ -126,5 +95,4 @@ module.exports = {
     login,
     logout,
     me
-
 }

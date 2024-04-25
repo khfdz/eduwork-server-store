@@ -12,6 +12,12 @@ router.get(
     '/carts',
     police_check('view', 'Cart'),
     cartController.index
-)
+);
+
+router.post(
+    '/carts',
+    police_check('create', 'Cart'),
+    cartController.store
+);
 
 module.exports = router;
