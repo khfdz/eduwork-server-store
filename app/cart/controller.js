@@ -67,25 +67,35 @@ const index = async (req, res, next) => {
 }
 const store = async (req, res, next) => {
     try {
-        const { product, qty } = req.body;
+        const { product: productId, qty } = req.body;
+
+        // Ambil data produk dari basis data berdasarkan ID produk yang diterima
+        const product = await Product.findById(productId);
+
+        if (!product) {
+            return res.status(404).json({ error: 1, message: "Produk tidak ditemukan" });
+        }
+
+        // Buat item cart baru dengan menggunakan data produk yang ditemukan
         const newCartItem = new CartItem({
-            product,
+            name: product.name, // Gunakan nilai "name" dari produk
             qty,
-            user: req.user._id
+            price: product.price,
+            image_url: product.image_url,
+            user: req.user._id,
+            product: product._id
         });
+
+        // Simpan item cart baru ke dalam basis data
         await newCartItem.save();
+
         return res.json(newCartItem);
     } catch (err) {
-        if (err && err.name === 'ValidationError') {
-            return res.json({
-                error: 1,
-                message: err.message,
-                fields: err.errors
-            });
-        }
+        // Tangani kesalahan jika terjadi
         next(err);
     }
 };
+
 
 
 module.exports = {
