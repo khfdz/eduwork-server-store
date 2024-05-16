@@ -20,4 +20,16 @@ router.post(
     cartController.store
 );
 
+router.patch(
+    '/carts/:id',
+    police_check('update', 'Cart'),
+    cartController.edit
+)
+
+router.delete(
+    '/carts/:id',
+    police_check('delete', 'Cart'),
+    cartController.destroy
+)
+
 module.exports = router;

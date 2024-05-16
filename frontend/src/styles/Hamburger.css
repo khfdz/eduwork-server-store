@@ -31,31 +31,17 @@
     z-index: 999; /* Di atas latar belakang */
     padding: 20px;
     transition: transform 0.3s ease; /* Efek slide */
-    background-color: #101010;
+    background-color: #eff0f2;
 }
 
 .profile-info {
     margin-top: 30px;
     margin-bottom: 20px;
-    background-color: #ffffff;
     border-radius: 30px;
     height: 500px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.profile-picture {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 10px;
-    display: fixed;
-    margin-left: 175px;
-    margin-top: 20px;
 }
 
 .profile-details {
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -98,10 +84,3 @@
     height: 30px;
 }
 
-.not-logged-in {
-    font-size: 50px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 120px;
-}

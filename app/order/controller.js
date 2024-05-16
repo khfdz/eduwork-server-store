@@ -36,7 +36,8 @@ const store = async (req, res, next) => {
             qty: parseInt(item.qty),
             price: parseInt(item.product.price),
             order: order._id,
-            product: item.product._id
+            product: item.product._id,
+            notes: item.notes
             })));
         orderItems.forEach(item => order.order_items.push(item));
         order.save();

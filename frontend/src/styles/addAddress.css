@@ -1,0 +1,31 @@
+/* .address-details {
+    background-color: aqua;
+    border-radius: 30px;
+    height: 500px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px;
+} */
+
+.address-container {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #e52269;
+    border-radius: 30px;
+    height: 450px;
+}
+
+.submitAddAddress {
+    margin-top: 40px;
+}
+
+.form-group {
+    margin-top: 40px;
+    margin-bottom: -30px;
+    font-size: 20px;
+    color: white;
+}
+
+.submitAddAddress {
+    margin-bottom: -30px;
+}

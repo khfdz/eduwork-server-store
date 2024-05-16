@@ -1,3 +1,4 @@
+// cartItem.js
 const mongoose = require('mongoose');
 const { model, Schema } = mongoose;
 
@@ -33,6 +34,11 @@ const cartItemSchema = Schema({
         ref: 'Product'
     },
 
+    notes: {
+        type: String,
+        default: ''
+    }
+
 });
 
-module.exports = model('CartItem', cartItemSchema)
+module.exports = model('CartItem', cartItemSchema);

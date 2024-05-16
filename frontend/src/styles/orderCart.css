@@ -19,6 +19,7 @@
     border-radius: 20px;
     display: flex;
     width: 1000px;
+    height: 1500px;
     flex-direction: column;
 }
 
@@ -30,7 +31,22 @@
     width: 640px;
     height: 180px;
     box-shadow: 5px 10px 20px -5px;
+    
 }
+
+.eraseButton {
+  top: -5px;
+  right: -565px;
+  background-color: #e52269;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
 
 .orderListImage {
     width: 200px;
@@ -39,11 +55,14 @@
     padding-left: 0px;
     padding-right: 0px;
     margin-left: 10px;
+    margin-top: -25px;
+    margin-bottom: 30px;
   }
   
   .orderListText {
     font-size: 20px;
     margin-left: 20px;
+    margin-top: -20px;
   }
 
   .orderListJudul {
@@ -66,7 +85,7 @@
   }
 
   .quantityControl {
-    margin-top: 50px;
+    margin-top: 32px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -129,11 +148,10 @@
 }
 
 .orderCart {
-    margin-top: 120px;
     position: fixed;
     top: 0;
     width: 500px; /* Set the width of the cart */
-    height: 100%; /* Set the height to match the screen height */
+    /* height: 100%; */
     z-index: 1000; /* Ensure it's above other content */
     transition: right 0.3s ease; /* Add a transition for smooth sliding animation */
   }
@@ -174,4 +192,103 @@
 
 .closeButton:hover {
   background-color: #d81b60;
+}
+
+.subtotal {
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+
+  text-align: center;
+}
+
+.orderButton{
+  background-color: #e52269;
+  color: white;
+  border: none;
+  font-size: 22px;
+  font-weight: bolder;
+  height: 45px;
+  border-radius: 20px;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 150px;
+  margin-top: 20px;
+}
+
+.pageButton {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.pageButton:hover {
+  background-color: #f0f0f0;
+}
+
+.pagination {
+  margin-top: 10px;
+}
+
+.subtotalLayer {
+  margin-bottom: -20px;
+  margin-top: 40px;
+  margin-left: 70px;
+  height: 300px;
+  width: 800px;
+  background-color: #f9fafc;
+  padding-top: 130px;
+  border-radius: 20px 20px 0px 0px;
+  padding-left: 50px;
+  box-shadow: 0px 0px 0px 0px black;
+}
+
+.tableCart {
+  margin-top: -100px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-left: 80px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+td:first-child {
+  width: 50%;
+}
+
+.garisTotal {
+  margin-top: 10px;
+  border: 2px black solid;
+  display: flex;
+  height: 2px;
+  margin-left: -50px;
+  display: flex;
+  margin-top: -50px;
+  margin-bottom: 50px;
+}
+
+.paginationButtons button {
+  margin-right: 5px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: -10px;
+}
+
+.paginationButtons button.active {
+  background-color: #e52269;
+  color: #e52269;
 }

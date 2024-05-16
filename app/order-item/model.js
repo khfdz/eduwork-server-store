@@ -28,6 +28,8 @@ const orderItemSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Order'
     },
+
+    notes: String  
 });
 
-module.exports = model('OrderItem', orderItemSchema)
+module.exports = model('OrderItem', orderItemSchema);

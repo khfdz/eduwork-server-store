@@ -2,24 +2,45 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/card.css';
 
-const CardsList = () => {
+const CardsList = ({ searchQuery, selectedTags, selectedCategory }) => {
     const [products, setProducts] = useState([]);
-    const [userId, setUserId] = useState(''); // Contoh penggunaan userId
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
-        async function fetchProducts() {
+        const fetchProducts = async () => {
             try {
-                const response = await fetch('http://localhost:3002/api/products');
-                const data = await response.json();
-                console.log('Fetched products:', data.data); // Menampilkan data produk yang berhasil diambil
-                setProducts(data.data); // Menggunakan data.data karena data berisi properti data yang berisi array produk
+                const tagsQueryString = selectedTags.length > 0 ? `&tags=${selectedTags.join('&tags=')}` : '';
+                const url = `http://localhost:3002/api/products?skip=${(currentPage - 1) * 12}&q=${searchQuery}&category=${selectedCategory}${tagsQueryString}`;
+
+                const response = await fetch(url);
+                const responseData = await response.json();
+                console.log('Fetched products:', responseData.data);
+                setProducts(responseData.data);
+                setTotalPages(Math.ceil(responseData.count / 12));
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
-        }
+        };
 
         fetchProducts();
-    }, []);
+    }, [currentPage, searchQuery, selectedCategory, selectedTags]);
+
+    const handleNextPage = () => {
+        if (currentPage < totalPages) {
+            setCurrentPage(currentPage + 1);
+        }
+    };
+
+    const handlePreviousPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    };
 
     const addToCart = async (productId) => {
         const requestData = {
@@ -30,19 +51,46 @@ const CardsList = () => {
                 qty: 1
             }]
         };
-        console.log('Adding to cart:', requestData); // Menampilkan data yang akan dikirim ke keranjang belanja
+        console.log('Adding to cart:', requestData);
         try {
-            const token = localStorage.getItem('token'); // Mengambil token dari local storage
+            const token = localStorage.getItem('token'); 
             const response = await fetch('http://localhost:3002/api/carts', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // Menambahkan token ke header Authorization
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify(requestData)
             });
             const data = await response.json();
-            console.log('Added to cart:', data); // Menampilkan data yang berhasil ditambahkan ke keranjang belanja
+            console.log('Added to cart:', data); 
+        } catch (error) {
+            console.error('Error adding to cart:', error);
+        }
+    };
+
+    const addToCarto = async (productId) => {
+        const requestData = {
+            items: [{
+                product: {
+                    _id: productId
+                },
+                qty: 1
+            }]
+        };
+        console.log('Adding to cart:', requestData); 
+        try {
+            const token = localStorage.getItem('token'); 
+            const response = await fetch('http://localhost:3002/api/carts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` 
+                },
+                body: JSON.stringify(requestData)
+            });
+            const data = await response.json();
+            console.log('Added to cart:', data);
         } catch (error) {
             console.error('Error adding to cart:', error);
         }
@@ -61,12 +109,24 @@ const CardsList = () => {
                             <button className="tagCard tags">{product.tags.name}</button>
                             <p className="price">IDR {product.price}</p>
                             <button className="carto" onClick={() => addToCart(product._id)}>+</button>
-
+                            <button className="cartoo" onClick={() => addToCarto(product._id)}>+</button>
                         </div>
                     </div>
                 ))}
             </div>
-            <button className="seeMore">See More</button>
+            <div className="pagination">
+                <button className="pageButton" onClick={handlePreviousPage}>Previous</button>
+                {[...Array(totalPages).keys()].map((pageNumber) => (
+                    <button
+                        key={pageNumber}
+                        className={`pageButton ${pageNumber + 1 === currentPage ? 'active' : ''}`}
+                        onClick={() => handlePageChange(pageNumber + 1)}
+                    >
+                        {pageNumber + 1}
+                    </button>
+                ))}
+                <button className="pageButton" onClick={handleNextPage}>Next</button>
+            </div>
         </div>
     );
 }

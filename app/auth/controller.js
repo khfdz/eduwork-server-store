@@ -43,21 +43,35 @@ const localStrategy = async (email, password, done) => {
 
 const login = async (req, res, next) => {
     passport.authenticate('local', async function (err, user) {
-        if (err) return next(err);
+        if (err) {
+            console.error('Error during authentication:', err); // Console log jika terjadi error selama proses otentikasi
+            return next(err);
+        }
 
-        if (!user) return res.json({ error: 1, message: 'email / password not found' });
+        if (!user) {
+            console.log('Login failed: email / password not found'); // Console log jika email atau password tidak ditemukan
+            return res.json({ error: 1, message: 'email / password not found' });
+        }
 
-        let signed = jwt.sign(user, config.secretKey);
+        try {
+            let signed = jwt.sign(user, config.secretKey);
 
-        await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
+            // Simpan token ke dalam basis data
+            await User.findByIdAndUpdate(user._id, { $push: { token: signed } });
 
-        return res.json({
-            message: 'login success',
-            user,
-            token: signed
-        });
+            console.log('Login success:', user); // Console log jika login berhasil
+            return res.json({
+                message: 'login success',
+                user,
+                token: signed
+            });
+        } catch (error) {
+            console.error('Failed to generate token:', error); // Console log jika gagal menghasilkan token
+            return next(error);
+        }
     })(req, res, next);
 };
+
 
 
 
