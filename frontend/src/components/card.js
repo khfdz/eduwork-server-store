@@ -108,8 +108,8 @@ const CardsList = ({ searchQuery, selectedTags, selectedCategory }) => {
                             <p className="card-text description">{product.description}</p>
                             <button className="tagCard tags">{product.tags.name}</button>
                             <p className="price">IDR {product.price}</p>
-                            <button className="carto" onClick={() => addToCart(product._id)}>+</button>
-                            <button className="cartoo" onClick={() => addToCarto(product._id)}>+</button>
+                            {/* <button className="carto" onClick={() => addToCart(product._id)}>+</button> */}
+                            <button className="carto" onClick={() => addToCarto(product._id)}>+</button>
                         </div>
                     </div>
                 ))}

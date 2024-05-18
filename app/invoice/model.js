@@ -8,9 +8,9 @@ const invoiceSchema = Schema({
         required: [true, 'Sub total harus diisi']
     },
 
-    dilvery_fee: {
+    delivery_fee: {
         type: Number,
-        required: [true, 'Delivery fee harus diisi']
+        // required: [true, 'Delivery fee harus diisi']
     },
 
     delivery_address : {

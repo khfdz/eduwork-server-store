@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Address from '../components/address'; // Import Address component
 import AddAddress from '../components/addAddress'; // Import AddAddress component
+import EditAddress from '../components/editAddress';
+import OrderHistory from './orderHistory'; // Import OrderHistory component
 import '../styles/profile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from '../components/login'; // Import Login component
 import Register from '../components/register'; // Import Register component
-import EditAddress from '../components/editAddress';
 
 const Profile = () => {
     const [userData, setUserData] = useState(null);
@@ -14,6 +15,7 @@ const Profile = () => {
     const [showAddAddress, setShowAddAddress] = useState(false); // State untuk menampilkan Add Address
     const [showProfile, setShowProfile] = useState(true); // State untuk menampilkan Profile
     const [showEditAddress, setShowEditAddress] = useState(false); // State untuk menampilkan Edit Address
+    const [showOrderHistory, setShowOrderHistory] = useState(false); // State untuk menampilkan OrderHistory
 
     useEffect(() => {
         const fetchData = async () => {
@@ -59,6 +61,11 @@ const Profile = () => {
     const handleEditAddressClick = () => {
         setShowProfile(false); // Sembunyikan Profile component saat tombol Edit Address diklik
         setShowEditAddress(true); // Tampilkan EditAddress component saat tombol Edit Address diklik
+    };
+
+    const handleShowOrderHistoryClick = () => {
+        setShowProfile(false); // Sembunyikan Profile component saat tombol Order History diklik
+        setShowOrderHistory(true); // Tampilkan OrderHistory component saat tombol Order History diklik
     };
 
     const handleLogoutClick = async () => {
@@ -117,6 +124,7 @@ const Profile = () => {
                         <Address userId={userData._id} />
                         <button onClick={handleAddAddressClick} className='btn AddAddress' >Add Address</button>
                         <button onClick={handleEditAddressClick} className='btn EditAddress' >Edit Address</button>
+                        <button onClick={handleShowOrderHistoryClick} className='btn OrderHistory'>Order History</button>
                         <button onClick={handleLogoutClick} className="btn Logout">Logout</button>
                     </div>
                 </div>
@@ -127,6 +135,8 @@ const Profile = () => {
 
             {showEditAddress && <EditAddress userId={userData._id} fullName={userData.fullname}/>}
 
+            {/* Render OrderHistory component jika showOrderHistory bernilai true */}
+            {showOrderHistory && <OrderHistory />}
             
             {/* Jika userData._id kosong atau null, render tombol Login dan Register */}
             {!userData?._id && !showLogin && !showRegister && (

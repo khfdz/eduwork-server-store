@@ -1,0 +1,82 @@
+/* orderHistory.css */
+
+.orderHistoryContainer {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .orderHistoryTitle {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .orderHistoryTable {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  
+  .orderHistoryTable th {
+    text-align: center;
+  }
+  
+  .orderHistoryTable th:first-child {
+    width: 15%; /* Mengatur lebar kolom Order ID */
+  }
+  
+  .orderHistoryTable th:nth-child(2) {
+    width: 15%; /* Mengatur lebar kolom Action */
+  }
+  
+  .orderHistoryTable td,
+  .orderHistoryTable th {
+    padding: 8px;
+    text-align: center; /* Menengahkan teks di sel tabel */
+    vertical-align: middle; /* Menengahkan teks secara vertikal di dalam sel tabel */
+  }
+  
+  .orderHistoryTable th:first-child,
+  .orderHistoryTable td:first-child {
+    text-align: left;
+  }
+  
+  .orderHistoryButton {
+    margin-right: 5px;
+  }
+  
+  .invoiceContainer {
+    margin-top: 20px;
+  }
+  
+  .invoiceTitle {
+    text-align: center;
+    margin-top: 0;
+  }
+  
+  .invoiceInfo {
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  .invoiceTable {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  
+  .invoiceTable th,
+  .invoiceTable td {
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .invoiceTable th:first-child,
+  .invoiceTable td:first-child {
+    text-align: left;
+  }
+  
+  .invoiceTable th:last-child,
+  .invoiceTable td:last-child {
+    width: 20%;
+  }
+  
