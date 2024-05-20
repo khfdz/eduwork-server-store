@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+// Navbar.js
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
 import searchIcon from '../assets/images/search.svg';
@@ -12,8 +13,10 @@ const Navbar = ({ onSearch, onCategory }) => {
   const [showOptions, setShowOptions] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
   const [query, setQuery] = useState('');
+  const [totalQty, setTotalQty] = useState(0);
 
-  
+  // console log totalQty
+  console.log('Total Quantity:', totalQty);
 
   const handleClickCart = () => {
     setShowOrderCart(prevState => !prevState);
@@ -70,7 +73,7 @@ const Navbar = ({ onSearch, onCategory }) => {
           </li>
         </ul>
       </nav>
-      {showOrderCart && <OrderCart />}
+      {showOrderCart && <OrderCart setTotalQty={setTotalQty} />}
       {showHamburger && <Hamburger onClose={handleCloseHamburger} />}
     </div>
   );

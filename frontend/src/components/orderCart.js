@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/orderCart.css";
 import Order from '../components/order';
 
-const OrderCart = () => {
+const OrderCart = ({ setTotalQty }) => {
   const [orderItems, setOrderItems] = useState([]);
   const [showOrderCart, setShowOrderCart] = useState(true);
   const [showOrder, setShowOrder] = useState(false);
@@ -12,9 +12,12 @@ const OrderCart = () => {
   const pageSize = 3;
   const orderDate = formatDate(new Date());
   const [deliveryAddresses, setDeliveryAddresses] = useState([]);
+  const [isCartEmpty, setIsCartEmpty] = useState(false);
+  const [cartItemCount, setCartItemCount] = useState(0); // Menyimpan jumlah item di keranjang
 
   useEffect(() => {
     const token = localStorage.getItem('token');
+    
 
     if (!token) {
       console.error('No token found, please log in.');
@@ -34,8 +37,10 @@ const OrderCart = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data); 
+        console.log(data);
         setOrderItems(data);
+        setCartItemCount(data.length); // Simpan jumlah item di keranjang
+        setIsCartEmpty(data.length === 0); // Periksa apakah keranjang pesanan kosong
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -54,13 +59,14 @@ const OrderCart = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data); 
+        console.log(data);
         setDeliveryAddresses(data);
       })
       .catch((error) => {
         console.error("Error fetching delivery addresses:", error);
       });
   }, []);
+
 
   const handleRemoveCartItem = async (id) => {
     try {
@@ -180,6 +186,9 @@ const OrderCart = () => {
   const endIndex = Math.min(startIndex + pageSize - 1, orderItems.length - 1);
   const displayedItems = orderItems.slice(startIndex, endIndex + 1);
 
+  const totalQty = orderItems.reduce((total, item) => total + item.qty, 0);
+  console.log('Total Quantity:', totalQty);
+
   const handlePageChange = (newPage) => {
     setPage(newPage);
   };
@@ -190,7 +199,7 @@ const OrderCart = () => {
   };
 
   return (
-    <div>
+     <div>
       {showOrderCart && (
         <>
           <div className="backgroundOverlay"></div>
@@ -202,6 +211,7 @@ const OrderCart = () => {
                   <div className="col-4 orderListTanggal">{orderDate}</div>
                   <button className="closeButton" onClick={handleClose}>X</button>
                 </div>
+
 
                 {displayedItems.map((item, index) => (
                   <div key={item._id} className="container orderListLayer2">

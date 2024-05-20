@@ -11,6 +11,7 @@ const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [totalQty, setTotalQty] = useState(0);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -26,7 +27,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Navbar onSearch={handleSearch} onCategory={handleCategory}/>
+      <Navbar onSearch={handleSearch} onCategory={handleCategory} totalQty={totalQty}/>
       <Tags onTagsChange={handleTags} />
       <Card searchQuery={searchQuery} selectedTags={selectedTags} selectedCategory={selectedCategory}/>
     </div>

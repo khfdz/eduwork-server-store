@@ -1,46 +1,86 @@
 /* order.css */
 
-.orderContainer {
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-.orderItems table {
+/* CSS untuk overlay dan popup */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Background hitam dengan opasitas 50% */
+  display: flex;
+  z-index: 1998; /* Di bawah overlay */
 }
 
-.orderItems th,
-.orderItems td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
+.popupOrder {
+  display: flex;
 }
 
-.orderItems th {
-  background-color: #f2f2f2;
+.popup {
+  display: flex;
+  flex-direction: column; /* Mengatur layout menjadi column */
+  background-color: white; /* Warna latar belakang popup */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  max-width: 90%; /* Maksimum lebar popup */
+  width: 60%; /* Lebar popup */
+  margin: auto;
 }
 
-.orderItems tr:hover {
-  background-color: #f2f2f2;
+.closeButtonOrder {
+  align-self: flex-end; /* Mengatur agar tombol close berada di kanan */
+  margin-top: 10px; /* Memberi jarak antara tombol close dengan konten lain */
+  background-color: #e52269;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.placeOrder {
+  background-color: #e52269;
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  width: 150px; /* Lebar tombol */
+  margin-top: 20px; /* Memberi jarak antara tombol place order dengan konten lain */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  align-self: center;
 }
 
 .orderTotal {
-  margin-top: 20px;
+  align-self: flex-end;
+  font-weight: 700;
 }
 
-.orderTotal p {
-  margin-bottom: 10px;
+.selectColumn {
+  width: 10px !important; /* Atur lebar sesuai kebutuhan */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
 }
 
-.orderButton {
-  background-color: #e52269;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.orderItem {
+  width: 200px !important; /* Atur lebar sesuai kebutuhan */
 }
+
+.orderQuantity {
+  width: 10px !important; /* Atur lebar sesuai kebutuhan */
+}
+
