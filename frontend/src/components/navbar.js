@@ -1,31 +1,52 @@
-// Navbar.js
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/navbar.css';
 import searchIcon from '../assets/images/search.svg';
 import OrderCart from './orderCart';
-import Hamburger from './hamburger'; 
+import Hamburger from './hamburger';
 import cartIcon from '../assets/images/cart.svg';
 import hamburgerIcon from '../assets/images/hamburger.svg';
+import { useAppContext } from '../context/AppContext';
 
-const Navbar = ({ onSearch, onCategory }) => {
+const Navbar = () => {
+  const { setSearchQuery, setSelectedCategory } = useAppContext();
+
   const [showOrderCart, setShowOrderCart] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
   const [query, setQuery] = useState('');
-  const [totalQty, setTotalQty] = useState(0);
+  const [cartQuantity, setCartQuantity] = useState(0); // State untuk menyimpan jumlah item di keranjang
 
-  // console log totalQty
-  console.log('Total Quantity:', totalQty);
+  useEffect(() => {
+    const fetchCartData = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch("http://localhost:3002/api/carts", {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+        const data = await response.json();
+        // Menghitung jumlah item di keranjang
+        const quantity = data.reduce((acc, item) => acc + item.qty, 0);
+        console.log("Cart Quantity:", quantity); // Tampilkan jumlah item di keranjang
+        setCartQuantity(quantity);
+      } catch (error) {
+        console.error("Error fetching cart data:", error);
+      }
+    };
+
+    fetchCartData();
+  }, []); // useEffect akan dijalankan sekali saat komponen dimount
 
   const handleClickCart = () => {
     setShowOrderCart(prevState => !prevState);
   };
 
   const handleSubmenuClick = (category) => {
-    console.log(category);
-    setShowOptions(false); 
-    onCategory(category);
+    setShowOptions(false);
+    setSelectedCategory(category);
   };
 
   const handleClickHamburger = () => {
@@ -41,10 +62,9 @@ const Navbar = ({ onSearch, onCategory }) => {
       <nav className="navbar navbar-expand-lg ">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item nav-link hamburger" style={{
-              backgroundImage: `url(${hamburgerIcon})`
-            }} onClick={handleClickHamburger}>
+            backgroundImage: `url(${hamburgerIcon})`
+          }} onClick={handleClickHamburger}>
           </li>
-          <li className="nav-item"><a className="nav-link" href="#">Dashboard</a></li>
           <li className="nav-item" onClick={() => setShowOptions(prevState => !prevState)}>
             <a className="nav-link" href="#">Categories</a>
             {showOptions && (
@@ -66,14 +86,15 @@ const Navbar = ({ onSearch, onCategory }) => {
               onChange={(e) => setQuery(e.target.value)}
             />
           </li>
-          <button className="searchButton" onClick={() => onSearch(query)}>Search</button>
+          <button className="searchButton" onClick={() => setSearchQuery(query)}>Search</button>
           <li className="nav-item nav-link cart" href="#" style={{
-              backgroundImage: `url(${cartIcon})`
-            }} onClick={handleClickCart}>
+            backgroundImage: `url(${cartIcon})`
+          }} onClick={handleClickCart}>
+            {cartQuantity > 0 && <span className="cart-quantity">{cartQuantity}</span>} {/* Menampilkan jumlah item di keranjang */}
           </li>
         </ul>
       </nav>
-      {showOrderCart && <OrderCart setTotalQty={setTotalQty} />}
+      {showOrderCart && <OrderCart />}
       {showHamburger && <Hamburger onClose={handleCloseHamburger} />}
     </div>
   );

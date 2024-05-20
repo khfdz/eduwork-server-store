@@ -41,6 +41,12 @@ const Order = ({ orderItems, subtotal, discount, total, deliveryAddresses, onClo
 
       // Set state menjadi true saat order berhasil dibuat
       setOrderSuccess(true);
+
+      // Menampilkan pesan sukses dan menutup Order setelah 2 detik
+      setTimeout(() => {
+        alert("Thank you for placing your order. Please proceed with the payment according to the invoice.");
+        onClose(); // Menutup Order
+      }, 100);
     } catch (error) {
       console.error("Error placing order:", error);
     }
@@ -85,6 +91,7 @@ const Order = ({ orderItems, subtotal, discount, total, deliveryAddresses, onClo
         </div>
         <div className="orderTotal">
             <p>Subtotal: IDR {subtotal}</p>
+            <p>Delivery Fee: IDR 20000</p>
             <p>Discount: IDR {discount}</p>
             <p>Total: IDR {total}</p>
           </div>
@@ -133,6 +140,7 @@ const Order = ({ orderItems, subtotal, discount, total, deliveryAddresses, onClo
 
         {/* Tampilkan Invoice jika order berhasil dibuat */}
         {orderSuccess && <Invoice />}
+
       </div>
     </div>
   );

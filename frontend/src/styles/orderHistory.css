@@ -80,3 +80,18 @@
     width: 20%;
   }
   
+  .orderOrder{
+    width: 60px !important;
+  }
+
+  .orderTotal {
+    width: 150px !important;
+  }
+
+  .orderStatus {
+    width: 200px !important;
+  }
+
+  .orderInvoice{
+    width: 80px !important;
+  }

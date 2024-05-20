@@ -1,8 +1,12 @@
+// CardsList.js
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/card.css';
+import { useAppContext } from '../context/AppContext'; // Import hook untuk menggunakan context
 
-const CardsList = ({ searchQuery, selectedTags, selectedCategory }) => {
+const CardsList = () => {
+    const { searchQuery, selectedTags, selectedCategory } = useAppContext(); // Menggunakan hook untuk mengambil nilai dari context
+
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
@@ -40,33 +44,6 @@ const CardsList = ({ searchQuery, selectedTags, selectedCategory }) => {
 
     const handlePageChange = (page) => {
         setCurrentPage(page);
-    };
-
-    const addToCart = async (productId) => {
-        const requestData = {
-            items: [{
-                product: {
-                    _id: productId
-                },
-                qty: 1
-            }]
-        };
-        console.log('Adding to cart:', requestData);
-        try {
-            const token = localStorage.getItem('token'); 
-            const response = await fetch('http://localhost:3002/api/carts', {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify(requestData)
-            });
-            const data = await response.json();
-            console.log('Added to cart:', data); 
-        } catch (error) {
-            console.error('Error adding to cart:', error);
-        }
     };
 
     const addToCarto = async (productId) => {
@@ -108,7 +85,6 @@ const CardsList = ({ searchQuery, selectedTags, selectedCategory }) => {
                             <p className="card-text description">{product.description}</p>
                             <button className="tagCard tags">{product.tags.name}</button>
                             <p className="price">IDR {product.price}</p>
-                            {/* <button className="carto" onClick={() => addToCart(product._id)}>+</button> */}
                             <button className="carto" onClick={() => addToCarto(product._id)}>+</button>
                         </div>
                     </div>

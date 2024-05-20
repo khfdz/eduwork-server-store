@@ -1,11 +1,15 @@
+// App.js
 import React from 'react';
 import Home from './pages/Home';
+import { AppProvider } from '../src/context/AppContext';
 
 const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <AppProvider>
+      <div>
+        <Home />
+      </div>
+    </AppProvider>
   );
 };
 

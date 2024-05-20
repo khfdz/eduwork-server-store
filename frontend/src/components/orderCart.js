@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/orderCart.css";
 import Order from '../components/order';
 
-const OrderCart = ({ setTotalQty }) => {
+const OrderCart = () => {
   const [orderItems, setOrderItems] = useState([]);
   const [showOrderCart, setShowOrderCart] = useState(true);
   const [showOrder, setShowOrder] = useState(false);
@@ -12,12 +12,11 @@ const OrderCart = ({ setTotalQty }) => {
   const pageSize = 3;
   const orderDate = formatDate(new Date());
   const [deliveryAddresses, setDeliveryAddresses] = useState([]);
-  const [isCartEmpty, setIsCartEmpty] = useState(false);
-  const [cartItemCount, setCartItemCount] = useState(0); // Menyimpan jumlah item di keranjang
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(pageSize - 1);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    
 
     if (!token) {
       console.error('No token found, please log in.');
@@ -39,8 +38,6 @@ const OrderCart = ({ setTotalQty }) => {
       .then((data) => {
         console.log(data);
         setOrderItems(data);
-        setCartItemCount(data.length); // Simpan jumlah item di keranjang
-        setIsCartEmpty(data.length === 0); // Periksa apakah keranjang pesanan kosong
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -67,6 +64,12 @@ const OrderCart = ({ setTotalQty }) => {
       });
   }, []);
 
+  useEffect(() => {
+    const newStartIndex = (page - 1) * pageSize;
+    const newEndIndex = Math.min(newStartIndex + pageSize - 1, orderItems.length - 1);
+    setStartIndex(newStartIndex);
+    setEndIndex(newEndIndex);
+  }, [page, orderItems]);
 
   const handleRemoveCartItem = async (id) => {
     try {
@@ -90,20 +93,21 @@ const OrderCart = ({ setTotalQty }) => {
 
   const handleAddQty = async (index) => {
     const updatedItems = [...orderItems];
-    updatedItems[index].qty += 1;
+    const itemIndex = startIndex + index; // Menyesuaikan indeks item dengan indeks pada halaman
+    updatedItems[itemIndex].qty += 1;
     setOrderItems(updatedItems);
     try {
-      console.log("Updating quantity to:", updatedItems[index].qty);
+      console.log("Updating quantity to:", updatedItems[itemIndex].qty);
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:3002/api/carts/${orderItems[index]._id}`, {
+      const response = await fetch(`http://localhost:3002/api/carts/${orderItems[itemIndex]._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({ 
-          qty: updatedItems[index].qty,
-          notes: updatedItems[index].notes // Sertakan juga catatan yang diperbarui
+          qty: updatedItems[itemIndex].qty,
+          notes: updatedItems[itemIndex].notes // Sertakan juga catatan yang diperbarui
         })
       });
       if (!response.ok) {
@@ -117,21 +121,22 @@ const OrderCart = ({ setTotalQty }) => {
   
   const handleSubtractQty = async (index) => {
     const updatedItems = [...orderItems];
-    if (updatedItems[index].qty > 0) {
-      updatedItems[index].qty -= 1;
+    const itemIndex = startIndex + index; // Menyesuaikan indeks item dengan indeks pada halaman
+    if (updatedItems[itemIndex].qty > 1) {
+      updatedItems[itemIndex].qty -= 1;
       setOrderItems(updatedItems);
       try {
-        console.log("Updating quantity to:", updatedItems[index].qty);
+        console.log("Updating quantity to:", updatedItems[itemIndex].qty);
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:3002/api/carts/${orderItems[index]._id}`, {
+        const response = await fetch(`http://localhost:3002/api/carts/${orderItems[itemIndex]._id}`, {
           method: 'PATCH',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
           },
           body: JSON.stringify({ 
-            qty: updatedItems[index].qty,
-            notes: updatedItems[index].notes // Sertakan juga catatan yang diperbarui
+            qty: updatedItems[itemIndex].qty,
+            notes: updatedItems[itemIndex].notes // Sertakan juga catatan yang diperbarui
           })
         });
         if (!response.ok) {
@@ -141,6 +146,8 @@ const OrderCart = ({ setTotalQty }) => {
       } catch (error) {
         console.error("Error updating quantity:", error);
       }
+    } else {
+      alert('Quantity cannot be less than 1!');
     }
   };
   
@@ -182,8 +189,6 @@ const OrderCart = ({ setTotalQty }) => {
 
   const totalPages = Math.ceil(orderItems.length / pageSize);
 
-  const startIndex = (page - 1) * pageSize;
-  const endIndex = Math.min(startIndex + pageSize - 1, orderItems.length - 1);
   const displayedItems = orderItems.slice(startIndex, endIndex + 1);
 
   const totalQty = orderItems.reduce((total, item) => total + item.qty, 0);
@@ -194,12 +199,16 @@ const OrderCart = ({ setTotalQty }) => {
   };
 
   const handleOrderClick = () => {
-    setShowOrder(true);
-    setShowOrderCart(false);
+    if (totalQty === 0) {
+      alert('Cart is empty. Cannot proceed with order!');
+    } else {
+      setShowOrder(true);
+      setShowOrderCart(false);
+    }
   };
 
   return (
-     <div>
+    <div>
       {showOrderCart && (
         <>
           <div className="backgroundOverlay"></div>
@@ -229,7 +238,8 @@ const OrderCart = ({ setTotalQty }) => {
                           onChange={(e) => {
                             const newNotes = e.target.value;
                             const updatedItems = [...orderItems];
-                            updatedItems[index].notes = newNotes;
+                            const itemIndex = startIndex + index; // Menyesuaikan indeks item dengan indeks pada halaman
+                            updatedItems[itemIndex].notes = newNotes;
                             setOrderItems(updatedItems);
                           }} // Mengupdate catatan secara lokal saat diubah
                         />
@@ -267,7 +277,7 @@ const OrderCart = ({ setTotalQty }) => {
                     </tbody>
                   </table>
                   <hr className="garisTotal"></hr>
-                  <button className="orderButton" onClick={handleOrderClick}>Order</button>
+                  <button className="orderButton" onClick={handleOrderClick} disabled={totalQty === 0}>Order</button>
                 </div>
 
               </div>

@@ -1,17 +1,14 @@
 // Home.js
-
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from '../../src/components/navbar';
 import Tags from '../../src/components/tags';
 import Card from '../../src/components/card';
+import { useAppContext } from '../context/AppContext';
 import '../styles/Home.css'; 
 
 const Home = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedTags, setSelectedTags] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [totalQty, setTotalQty] = useState(0);
+  const { searchQuery, selectedTags, selectedCategory, setSearchQuery, setSelectedTags, setSelectedCategory } = useAppContext();
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -27,7 +24,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Navbar onSearch={handleSearch} onCategory={handleCategory} totalQty={totalQty}/>
+      <Navbar onSearch={handleSearch} onCategory={handleCategory}/>
       <Tags onTagsChange={handleTags} />
       <Card searchQuery={searchQuery} selectedTags={selectedTags} selectedCategory={selectedCategory}/>
     </div>
