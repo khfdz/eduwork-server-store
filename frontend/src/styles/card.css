@@ -1,5 +1,7 @@
 /* card.css */
 
+  
+
 .recomended{
     margin-top: 20px;
     font-size: 30px;
@@ -71,7 +73,9 @@
     align-items: center;
     justify-content: center;
     font-weight: bolder;
-    box-shadow: 1px 15px 10px -10px;
+    box-shadow: 1px 15px 10px -10px black;
+    background-color: #e52269;
+    color: white;
 }
 
 
@@ -107,4 +111,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+}
+
+.pagination {
+    justify-content: center;
 }

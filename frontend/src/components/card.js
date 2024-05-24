@@ -1,34 +1,36 @@
-// CardsList.js
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext  } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/card.css';
 import { useAppContext } from '../context/AppContext'; // Import hook untuk menggunakan context
-
+import { CartContext  } from '../../src/context/CartContext';
 const CardsList = () => {
+    const { fetchCartData } = useContext(CartContext);
+
     const { searchQuery, selectedTags, selectedCategory } = useAppContext(); // Menggunakan hook untuk mengambil nilai dari context
 
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [pageSize, setPageSize] = useState(12); // Menambah state untuk menentukan berapa banyak produk yang ditampilkan per halaman
 
     useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const tagsQueryString = selectedTags.length > 0 ? `&tags=${selectedTags.join('&tags=')}` : '';
-                const url = `http://localhost:3002/api/products?skip=${(currentPage - 1) * 12}&q=${searchQuery}&category=${selectedCategory}${tagsQueryString}`;
+                const url = `http://localhost:3002/api/products?skip=${(currentPage - 1) * pageSize}&limit=${pageSize}&q=${searchQuery}&category=${selectedCategory}${tagsQueryString}`;
 
                 const response = await fetch(url);
                 const responseData = await response.json();
                 console.log('Fetched products:', responseData.data);
                 setProducts(responseData.data);
-                setTotalPages(Math.ceil(responseData.count / 12));
+                setTotalPages(Math.ceil(responseData.count / pageSize));
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
         };
 
         fetchProducts();
-    }, [currentPage, searchQuery, selectedCategory, selectedTags]);
+    }, [currentPage, searchQuery, selectedCategory, selectedTags, pageSize]);
 
     const handleNextPage = () => {
         if (currentPage < totalPages) {
@@ -46,7 +48,7 @@ const CardsList = () => {
         setCurrentPage(page);
     };
 
-    const addToCarto = async (productId) => {
+    const addToCart = async (productId) => {
         const requestData = {
             items: [{
                 product: {
@@ -68,6 +70,7 @@ const CardsList = () => {
             });
             const data = await response.json();
             console.log('Added to cart:', data);
+            fetchCartData(); 
         } catch (error) {
             console.error('Error adding to cart:', error);
         }
@@ -83,9 +86,10 @@ const CardsList = () => {
                         <div className="card-body">
                             <h5 className="card-title">{product.name}</h5>
                             <p className="card-text description">{product.description}</p>
-                            <button className="tagCard tags">{product.tags.name}</button>
+                            <div className="tagCard tags">{product.tags.name}</div>
+
                             <p className="price">IDR {product.price}</p>
-                            <button className="carto" onClick={() => addToCarto(product._id)}>+</button>
+                            <button className="carto" onClick={() => addToCart(product._id)}>+</button>
                         </div>
                     </div>
                 ))}

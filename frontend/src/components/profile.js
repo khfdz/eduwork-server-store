@@ -1,100 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import Address from '../components/address'; // Import Address component
-import AddAddress from '../components/addAddress'; // Import AddAddress component
+import React, { useState, useEffect, useContext } from 'react';
+import Address from '../components/address'; 
+import AddAddress from '../components/addAddress'; 
 import EditAddress from '../components/editAddress';
-import OrderHistory from './orderHistory'; // Import OrderHistory component
+import OrderHistory from './orderHistory'; 
 import '../styles/profile.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from '../components/login'; // Import Login component
-import Register from '../components/register'; // Import Register component
+import Login from '../components/login';
+import Register from '../components/register'; 
+import { CartContext  } from '../../src/context/CartContext';
+
 
 const Profile = () => {
-    const [userData, setUserData] = useState(null);
-    const [showLogin, setShowLogin] = useState(false); // State untuk menampilkan Login
-    const [showRegister, setShowRegister] = useState(false); // State untuk menampilkan Register
-    const [showAddAddress, setShowAddAddress] = useState(false); // State untuk menampilkan Add Address
-    const [showProfile, setShowProfile] = useState(true); // State untuk menampilkan Profile
-    const [showEditAddress, setShowEditAddress] = useState(false); // State untuk menampilkan Edit Address
-    const [showOrderHistory, setShowOrderHistory] = useState(false); // State untuk menampilkan OrderHistory
+    const {userData, setUserData,handleLogoutClick} = useContext(CartContext);
+    const [showLogin, setShowLogin] = useState(false); 
+    const [showRegister, setShowRegister] = useState(false);
+    const [showAddAddress, setShowAddAddress] = useState(false);
+    const [showProfile, setShowProfile] = useState(true);
+    const [showEditAddress, setShowEditAddress] = useState(false); 
+    const [showOrderHistory, setShowOrderHistory] = useState(false); 
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('http://localhost:3002/auth/me', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
-                    }
-                });
-                const data = await response.json();
-                if (response.ok) {
-                    setUserData({
-                        fullname: data.full_name,
-                        email: data.email,
-                        role: data.role,
-                        _id: data._id 
-                    });
-                } else {
-                    console.error('Failed to fetch user data:', data);
-                }
-            } catch (error) {
-                console.error('Failed to fetch user data:', error);
-            }
-        };
-
-        fetchData();
     }, []);
 
     const handleLoginClick = () => {
-        setShowLogin(true); // Menampilkan Login component saat tombol login diklik
+        setShowLogin(true); 
     };
 
     const handleRegisterClick = () => {
-        setShowRegister(true); // Menampilkan Register component saat tombol register diklik
+        setShowRegister(true); 
     };
 
     const handleAddAddressClick = () => {
-        setShowProfile(false); // Sembunyikan Profile component saat tombol Add Address diklik
-        setShowAddAddress(true); // Tampilkan AddAddress component saat tombol Add Address diklik
+        setShowProfile(false); 
+        setShowAddAddress(true); 
     };
 
     const handleEditAddressClick = () => {
-        setShowProfile(false); // Sembunyikan Profile component saat tombol Edit Address diklik
-        setShowEditAddress(true); // Tampilkan EditAddress component saat tombol Edit Address diklik
+        setShowProfile(false); 
+        setShowEditAddress(true); 
     };
 
     const handleShowOrderHistoryClick = () => {
-        setShowProfile(false); // Sembunyikan Profile component saat tombol Order History diklik
-        setShowOrderHistory(true); // Tampilkan OrderHistory component saat tombol Order History diklik
-    };
-
-    const handleLogoutClick = async () => {
-        try {
-            const response = await fetch('http://localhost:3002/auth/logout', {
-                method: 'POST',
-                headers: {
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`
-                }
-            });
-            if (response.ok) {
-                localStorage.removeItem('token'); // Hapus token dari local storage
-                setUserData(null); // Set userData menjadi null setelah logout berhasil
-            } else {
-                console.error('Failed to logout:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Failed to logout:', error);
-        }
+        setShowProfile(false);
+        setShowOrderHistory(true); 
     };
 
     return (
         <div className="profile-container">
-            {/* Render Login component jika showLogin bernilai true */}
             {showLogin && <Login />}
-            {/* Render Register component jika showRegister bernilai true */}
             {showRegister && <Register />}
-            
-            {/* Render Profile component jika showProfile bernilai true */}
             {showProfile && userData?._id && (
                 <div className="loggedInContainer">
                     <div className="profile-info">
@@ -129,16 +83,11 @@ const Profile = () => {
                     </div>
                 </div>
             )}
-            
-            {/* Render AddAddress component jika showAddAddress bernilai true */}
+        
             {showAddAddress && <AddAddress userId={userData._id} fullName={userData.fullname} />}
-
             {showEditAddress && <EditAddress userId={userData._id} fullName={userData.fullname}/>}
-
-            {/* Render OrderHistory component jika showOrderHistory bernilai true */}
             {showOrderHistory && <OrderHistory />}
             
-            {/* Jika userData._id kosong atau null, render tombol Login dan Register */}
             {!userData?._id && !showLogin && !showRegister && (
                 <div className="notLoggedInContainer">
                     <div className="profile-info-belum-login">

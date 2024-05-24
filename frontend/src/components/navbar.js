@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom';
 import '../styles/navbar.css';
 import searchIcon from '../assets/images/search.svg';
 import OrderCart from './orderCart';
@@ -7,6 +8,7 @@ import Hamburger from './hamburger';
 import cartIcon from '../assets/images/cart.svg';
 import hamburgerIcon from '../assets/images/hamburger.svg';
 import { useAppContext } from '../context/AppContext';
+import { CartContext } from '../../src/context/CartContext';
 
 const Navbar = () => {
   const { setSearchQuery, setSelectedCategory } = useAppContext();
@@ -15,30 +17,11 @@ const Navbar = () => {
   const [showOptions, setShowOptions] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
   const [query, setQuery] = useState('');
-  const [cartQuantity, setCartQuantity] = useState(0); // State untuk menyimpan jumlah item di keranjang
+  const { cartQuantity, userData, fetchCartData } = useContext(CartContext);
 
   useEffect(() => {
-    const fetchCartData = async () => {
-      try {
-        const token = localStorage.getItem('token');
-        const response = await fetch("http://localhost:3002/api/carts", {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`
-          }
-        });
-        const data = await response.json();
-        // Menghitung jumlah item di keranjang
-        const quantity = data.reduce((acc, item) => acc + item.qty, 0);
-        console.log("Cart Quantity:", quantity); // Tampilkan jumlah item di keranjang
-        setCartQuantity(quantity);
-      } catch (error) {
-        console.error("Error fetching cart data:", error);
-      }
-    };
-
     fetchCartData();
-  }, []); // useEffect akan dijalankan sekali saat komponen dimount
+  }, []);
 
   const handleClickCart = () => {
     setShowOrderCart(prevState => !prevState);
@@ -59,7 +42,7 @@ const Navbar = () => {
 
   return (
     <div className="container containerNavbar">
-      <nav className="navbar navbar-expand-lg ">
+      <nav className="navbar navbar-expand-lg">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item nav-link hamburger" style={{
             backgroundImage: `url(${hamburgerIcon})`
@@ -74,6 +57,17 @@ const Navbar = () => {
               </ul>
             )}
           </li>
+
+          {userData && userData.role === 'admin' && (
+            <>
+              <li className="nav-item">
+                <Link className="nav-link" to="/">Dashboard</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/admin">Admin</Link>
+              </li>
+            </>
+          )}
           <li className="nav-item">
             <input
               type="text"
@@ -90,7 +84,7 @@ const Navbar = () => {
           <li className="nav-item nav-link cart" href="#" style={{
             backgroundImage: `url(${cartIcon})`
           }} onClick={handleClickCart}>
-            {cartQuantity > 0 && <span className="cart-quantity">{cartQuantity}</span>} {/* Menampilkan jumlah item di keranjang */}
+            {cartQuantity > 0 && <span className="cart-quantity">{cartQuantity}</span>}
           </li>
         </ul>
       </nav>

@@ -35,6 +35,7 @@ const Login = () => {
                 setUserId(data.user._id);
                 setIsLoggedIn(true);
                 setUserName(data.user.full_name);
+                window.location.reload()
                 // Tampilkan Profile setelah 3 detik
                 setTimeout(() => {
                     setShowProfile(true);

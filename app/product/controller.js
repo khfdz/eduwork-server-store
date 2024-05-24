@@ -73,6 +73,9 @@ const store = async (req, res, next) => {
     }
 };
 
+const mongoose = require('mongoose');
+const { model, Schema, Types } = mongoose;
+
 const update = async (req, res, next) => {
     try {
         let payload = req.body;
@@ -88,12 +91,9 @@ const update = async (req, res, next) => {
         }
 
         if (payload.tags && payload.tags.length > 0) {
-            let tags = await Tag.find({ name: { $in: payload.tags.map(tag => new RegExp(tag, 'i')) } });
-            if (tags.length) {
-                payload = { ...payload, tags: tags.map(tag => tag._id) };
-            } else {
-                delete payload.tags;
-            }
+            // Convert tag names to ObjectId
+            let tagIds = await Tag.find({ name: { $in: payload.tags } }).distinct('_id');
+            payload.tags = tagIds;
         }
 
         if (req.file) {
@@ -143,6 +143,7 @@ const update = async (req, res, next) => {
         next(err);
     }
 };
+
 
 
 const destroy = async (req, res, next) => {
