@@ -1,0 +1,59 @@
+.productBackground {
+ background-color: burlywood
+    }
+
+.tableProduct {
+    align-items: center;
+    justify-content: center;
+    margin-left: 60px;
+    width: 90%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.thProduct {
+    text-align: center;
+}
+
+.tbodyProduct {
+    align-items: center;
+    justify-content: center;
+}
+
+.noProduct {
+width: 50px !important; /* Atur lebar sesuai kebutuhan */
+text-align: center;
+}
+
+.nameProduct {
+    width: 200px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+}
+
+.descriptionProduct {
+    width: 400px !important; /* Atur lebar sesuai kebutuhan */
+}
+
+.priceProduct {
+    width: 100px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+}
+
+.categoryProduct {
+    width: 200px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+}
+
+.tagsProduct {
+    width: 200px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+}
+
+.imageProduct {
+    width: 100px !important; /* Atur lebar sesuai kebutuhan */
+    height: 200px;
+}
+
+.actionProduct {
+    width: 400px !important; /* Atur lebar sesuai kebutuhan */
+}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useProductContext } from '../../context/ProductContext';
 import { useCategory } from '../../context/CategoryContext';
 import { useTag } from '../../context/TagContext';
 
 const AddProduct = () => {
+  
   const [formData, setFormData] = useState({
     name: '',
     price: '',
@@ -14,6 +16,7 @@ const AddProduct = () => {
 
   const categories = useCategory();
   const tags = useTag();
+  const { addProduct } = useProductContext();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -29,39 +32,19 @@ const AddProduct = () => {
     });
   };
 
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('price', formData.price);
-      formDataToSend.append('description', formData.description);
-      formDataToSend.append('image', formData.image);
-      formDataToSend.append('category', formData.category);
-      formDataToSend.append('tags', formData.tags);
-
-      const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:3002/api/products', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`
-        },
-        body: formDataToSend
+      await addProduct(formData);
+      setFormData({
+        name: '',
+        price: '',
+        description: '',
+        image: null,
+        category: '',
+        tags: ''
       });
-
-      if (response.ok) {
-        console.log('Product added successfully');
-        setFormData({
-          name: '',
-          price: '',
-          description: '',
-          image: null,
-          category: '',
-          tags: ''
-        });
-      } else {
-        console.error('Failed to add product:', await response.text());
-      }
     } catch (error) {
       console.error('Failed to add product:', error);
     }

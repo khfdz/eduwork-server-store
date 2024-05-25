@@ -7,7 +7,7 @@ const AddTags = () => {
     image: null,
   });
 
-  const { addTag } = useTag();
+  const tags = useTag();
   const [tagName, setTagName] = useState('');
   const [tagImage, setTagImage] = useState(null);
 
@@ -35,17 +35,10 @@ const AddTags = () => {
     try {
       const formDataToSend = new FormData();
       formDataToSend.append('name', tagName || formData.name);
-      formDataToSend.append('image', tagImage || formData.image, (tagImage || formData.image).name); // append the file with its original name
+      formDataToSend.append('image', tagImage || formData.image, (tagImage || formData.image).name);
 
-      console.log('Data to be sent:', {
-        name: tagName || formData.name,
-        image: (tagImage || formData.image).name, // send only the image name, not the entire file object
-      });
-
-      // Get the token from localStorage
       const token = localStorage.getItem('token');
 
-      // Make a POST request to add the tag with the Authorization header
       const response = await fetch('http://localhost:3002/api/tags', {
         method: 'POST',
         headers: {
@@ -55,34 +48,31 @@ const AddTags = () => {
       });
 
       if (response.ok) {
-        console.log('Tag added successfully');
         setFormData({
           name: '',
           image: null,
         });
         setTagName('');
         setTagImage(null);
+        // Refresh the tags after adding a new one
+        tags.push(await response.json());
       } else {
         console.error('Failed to add tag:', await response.text());
       }
     } catch (error) {
       console.error('Failed to add tag:', error);
     }
-    window.location.reload();
   };
 
-  const tags = useTag();
-
   return (
-    <div>
+    <div className='container'>
       <h2>Add New Tag</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='form-group-addTags'>
           <label htmlFor="name">Tag Name:</label>
-          <input type="text" id="name" name="name" value={tagName || formData.name} onChange={handleInputChange} required />
+          <input type="text" id="name" name="name" value={tagName || formData.name} onChange={handleInputChange} required className='form-control'/>
         </div>
-        <div>
-          {/* Tambahkan pratinjau untuk gambar yang dipilih */}
+        <div className='form-group-addTags'>
           {tagImage && (
             <div>
               <img src={URL.createObjectURL(tagImage)} alt="Preview" style={{ maxWidth: '100px', maxHeight: '100px' }} />
@@ -93,26 +83,6 @@ const AddTags = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
-
-      {/* Tabel tags */}
-      <h2>Tags</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Tag Name</th>
-            <th>Image URL</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* Isi tabel tags */}
-          {tags.map((tag, index) => (
-            <tr key={index}>
-              <td>{tag.name}</td>
-              <td>{tag.image_url}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
     </div>
   );
 };
