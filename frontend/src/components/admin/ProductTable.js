@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useProductContext } from '../../context/ProductContext'; // Import hook useProductContext
+import { useProductContext } from '../../context/ProductContext'; 
 import ProductEditForm from './ProductEditForm';
-import '../../styles/ProductTable.css'; // Import file CSS untuk styling
+import '../../styles/ProductTable.css';
 
 const ProductTable = () => {
-  const { products, deleteProduct } = useProductContext(); // Gunakan hook useProductContext untuk mengakses konteks produk
+  const { products, deleteProduct } = useProductContext(); 
 
   const [currentPage, setCurrentPage] = useState(1);
   const [editingProduct, setEditingProduct] = useState(null);
+  const [editClickCount, setEditClickCount] = useState(0);
 
   const productsPerPage = 10;
   const totalPages = Math.ceil(products.length / productsPerPage);
@@ -24,17 +25,21 @@ const ProductTable = () => {
   const endIndex = startIndex + productsPerPage;
   const currentProducts = products.slice(startIndex, endIndex);
 
-  // Fungsi untuk menampilkan form edit saat tombol Edit diklik
   const handleEdit = (product) => {
-    setEditingProduct(product);
+    if (editingProduct && editingProduct._id === product._id) {
+      setEditingProduct(null);
+      setEditClickCount(0);
+    } else {
+      setEditingProduct(product);
+      setEditClickCount((prevCount) => prevCount + 1);
+    }
   };
 
-  // Fungsi untuk menutup form edit
   const handleCloseEditForm = () => {
     setEditingProduct(null);
+    setEditClickCount(0);
   };
 
-  // Fungsi untuk menghapus produk
   const handleDelete = async (productId) => {
     try {
       await deleteProduct(productId);
@@ -46,7 +51,7 @@ const ProductTable = () => {
   return (
     <div className='container'>
       <div className='productBackground'>
-      <h2>Product List</h2>
+      <h2 className='productListTitle'>Product List</h2>
       <table  className='table table-striped tableProduct'>
         <thead className='thProduct'>
           <tr >
@@ -70,12 +75,21 @@ const ProductTable = () => {
                 <td className='priceProduct'>{product.price}</td>
                 <td className='categoryProduct'>{product.category.name}</td>
                 <td className='tagsProduct'>{product.tags.name}</td>
-                <td>
-                  <img src={`http://localhost:3002/images/products/${product.image_url}`} alt={product.name} style={{ maxWidth: '150px' }} />
+                <td className='imageProduct'>
+                  <img className='imageProduct' src={`http://localhost:3002/images/products/${product.image_url}`} alt={product.name} style={{ maxWidth: '120px'}} />
                 </td>
-                <td>
-                  <button className='btn btn-primary' onClick={() => handleEdit(product)}>Edit</button> {/* Menampilkan form edit saat diklik */}
-                  <button className='btn btn-primary' onClick={() => handleDelete(product._id)}>Delete</button> {/* Menghapus produk saat diklik */}
+                <td className='actionProduct'>
+                  {editingProduct && editingProduct._id === product._id ? (
+                    <React.Fragment>
+                      <button className='btn btn-primary' onClick={() => handleEdit(product)}>Cancel</button>
+                     
+                    </React.Fragment>
+                  ) : (
+                    <React.Fragment>
+                    <button className='btn btn-primary' onClick={() => handleEdit(product)}>Edit</button>
+                    <button className='btn btn-primary' onClick={() => handleDelete(product._id)}>Delete</button>
+                    </React.Fragment>
+                  )}
                 </td>
               </tr>
               {editingProduct && editingProduct._id === product._id && (
@@ -89,12 +103,21 @@ const ProductTable = () => {
           ))}
         </tbody>
       </table>
-      {/* Tombol Halaman */}
-      <div>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button key={index + 1} onClick={() => setCurrentPage(index + 1)}>{index + 1}</button>
-        ))}
-      </div>
+
+      <div className='productTabelPagination'>
+    {Array.from({ length: totalPages }, (_, index) => (
+        <button 
+            className='paginationButton' 
+            key={index + 1} 
+            onClick={() => setCurrentPage(index + 1)}
+            data-active={currentPage === index + 1} 
+        >
+            {index + 1}
+        </button>
+    ))}
+</div>
+
+
     </div>
     </div>
   );

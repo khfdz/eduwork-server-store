@@ -1,8 +1,58 @@
+.tagListTitle {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .tags-table {
-    margin-top: 20px;
-  }
-  
-  .tag-image {
-    max-width: 100px;
-  }
-  
+  align-items: center;
+  justify-content: center;
+  margin-left: 60px;
+  width: 100%;
+  border-collapse: collapse;
+  vertical-align: inherit;
+  border-spacing: 0;
+  border: 1px solid #ddd; /* Add border to table */
+}
+
+.tags-table th, .tags-table td {
+  border: 1px solid #ddd; /* Add border to table cells */
+  padding: 8px;
+}
+
+.thTag {
+  text-align: center;
+  background-color: #f2f2f2; /* Optional: Add background color to header */
+}
+
+.tbodyTag {
+  align-items: center;
+  justify-content: center;
+}
+
+.tag-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100px;
+}
+
+.tag-no {
+  width: 100px !important;
+  text-align: center;
+}
+
+.tag-name {
+  width: 100px !important;
+  text-align: center;
+}
+
+.tag-image {
+  width: 100px !important;
+  text-align: center;
+}
+
+.tag-action {
+  width: 100px !important;
+  text-align: center;
+}

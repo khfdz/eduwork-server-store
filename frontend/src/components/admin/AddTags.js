@@ -66,9 +66,9 @@ const AddTags = () => {
 
   return (
     <div className='container'>
-      <h2>Add New Tag</h2>
       <form onSubmit={handleSubmit}>
         <div className='form-group-addTags'>
+      <h2>Add New Tag</h2>
           <label htmlFor="name">Tag Name:</label>
           <input type="text" id="name" name="name" value={tagName || formData.name} onChange={handleInputChange} required className='form-control'/>
         </div>
@@ -81,7 +81,7 @@ const AddTags = () => {
           <label htmlFor="image">Tag Image:</label>
           <input type="file" id="image" name="image" accept="image/*" onChange={handleImageChange} required />
         </div>
-        <button type="submit">Submit</button>
+        <button className='btn btn-primary' type="submit">Submit</button>
       </form>
     </div>
   );

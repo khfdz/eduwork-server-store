@@ -1,0 +1,65 @@
+/* Container utama */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Heading */
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Label dan input */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="button"]:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button[type="button"]:last-of-type {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Button hover effects */
+button[type="button"]:first-of-type:hover {
+    background-color: #45a049;
+}
+
+button[type="button"]:last-of-type:hover {
+    background-color: #e31e1e;
+}

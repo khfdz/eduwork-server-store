@@ -8,36 +8,34 @@ const TagsTable = () => {
 
   return (
     <div className='container'>
-    <div className="tags-table">
-      <h2>Tags</h2>
-      <table className='table table-striped'>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Tag Name</th>
-            <th>Image URL</th>
-            <th>Image</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tags.map((tag, index) => (
-            <tr key={index}>
-              <td>{(currentPage - 1) * 12 + index + 1}</td>
-              <td>{tag.name}</td>
-              <td>{tag.image_url}</td>
-              <td>
-                <img src={`http://localhost:3002/images/products/${tag.image_url}`} alt={tag.name} className="tag-image" />
-              </td>
-              <td>
-                <button className="btn btn-primary">Edit</button>
-                <button className="btn btn-danger">Delete</button>
-              </td>
+      <div className="">
+        <h2 className='tagListTitle'>Tag List</h2>
+        <table className='table table-striped tags-table'>
+          <thead className='thTag'>
+            <tr>
+              <th>No</th>
+              <th>Tag Name</th>
+              <th>Image</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody className='tbodyTag'>
+            {tags.map((tag, index) => (
+              <tr key={index}>
+                <td className='tag-no'>{(currentPage - 1) * 12 + index + 1}</td>
+                <td className='tag-name'>{tag.name}</td>
+                <td className='tag-image'>
+                  <img src={`http://localhost:3002/images/products/${tag.image_url}`} alt={tag.name} className="tag-image" />
+                </td>
+                <td className='tag-action'>
+                  <button className="btn btn-primary">Edit</button>
+                  <button className="btn btn-danger">Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

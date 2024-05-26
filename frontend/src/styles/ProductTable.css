@@ -1,59 +1,102 @@
-.productBackground {
- background-color: burlywood
-    }
-
-.tableProduct {
+.addNewProductTitle {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .productListTitle {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .tableProduct {
     align-items: center;
     justify-content: center;
     margin-left: 60px;
-    width: 90%;
-    table-layout: fixed;
+    width: 100%;
     border-collapse: collapse;
-}
-
-.thProduct {
+    vertical-align: inherit;
+    border-spacing: 0;
+    border: 1px solid #ddd; /* Add border to table */
+  }
+  
+  .tableProduct th, .tableProduct td {
+    border: 1px solid #ddd; /* Add border to table cells */
+    padding: 8px;
+  }
+  
+  .thProduct {
     text-align: center;
-}
-
-.tbodyProduct {
+    background-color: #f2f2f2; /* Optional: Add background color to header */
+  }
+  
+  .tbodyProduct {
     align-items: center;
     justify-content: center;
-}
-
-.noProduct {
-width: 50px !important; /* Atur lebar sesuai kebutuhan */
-text-align: center;
-}
-
-.nameProduct {
+  }
+  
+  .noProduct {
+    width: 10px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+  }
+  
+  .nameProduct {
     width: 200px !important; /* Atur lebar sesuai kebutuhan */
     text-align: center;
-}
-
-.descriptionProduct {
-    width: 400px !important; /* Atur lebar sesuai kebutuhan */
-}
-
-.priceProduct {
-    width: 100px !important; /* Atur lebar sesuai kebutuhan */
+  }
+  
+  .descriptionProduct {
+    width: 500px !important; /* Atur lebar sesuai kebutuhan */
+  }
+  
+  .priceProduct {
+    width: 150px !important; /* Atur lebar sesuai kebutuhan */
     text-align: center;
-}
-
-.categoryProduct {
-    width: 200px !important; /* Atur lebar sesuai kebutuhan */
+  }
+  
+  .categoryProduct {
+    width: 150px !important; /* Atur lebar sesuai kebutuhan */
     text-align: center;
-}
-
-.tagsProduct {
-    width: 200px !important; /* Atur lebar sesuai kebutuhan */
+  }
+  
+  .tagsProduct {
+    width: 150px !important; /* Atur lebar sesuai kebutuhan */
     text-align: center;
-}
-
-.imageProduct {
-    width: 100px !important; /* Atur lebar sesuai kebutuhan */
-    height: 200px;
-}
-
-.actionProduct {
-    width: 400px !important; /* Atur lebar sesuai kebutuhan */
-}
+  }
+  
+  .imageProduct {
+    text-align: center;
+  }
+  
+  .actionProduct {
+    width: 150px !important; /* Atur lebar sesuai kebutuhan */
+  }
+  
+  .productTabelPagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .paginationButton {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .paginationButton:hover {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .paginationButton[data-active='true'] {
+    background-color: #e52269;
+    color: #fff;
+    border: none;
+  }
+  

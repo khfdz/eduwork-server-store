@@ -79,9 +79,40 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
+  const updateProduct = async (productId, formData) => {
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('price', formData.price);
+      formDataToSend.append('description', formData.description);
+      formDataToSend.append('image', formData.image);
+      formDataToSend.append('category', formData.category);
+      formDataToSend.append('tags', formData.tags);
+
+      const token = localStorage.getItem('token');
+      const response = await fetch(`http://localhost:3002/api/products/${productId}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        body: formDataToSend
+      });
+
+      if (response.ok) {
+        console.log('Product updated successfully');
+        const updatedProduct = await response.json();
+        setProducts(products.map(product => product._id === productId ? updatedProduct : product));
+      } else {
+        console.error('Failed to update product:', await response.text());
+      }
+    } catch (error) { 
+      console.error('Failed to update product:', error);
+    }
+  };
+
 
   return (
-    <ProductContext.Provider value={{ products, fetchProducts, deleteProduct, addProduct }}>
+    <ProductContext.Provider value={{ products, fetchProducts, deleteProduct, addProduct, updateProduct }}>
       {children}
     </ProductContext.Provider>
   );
