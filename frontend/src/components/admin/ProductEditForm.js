@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../../styles/ProductEditForm.css'; 
-import { useCategory } from '../../context/CategoryContext';
+import { useCategoryContext } from '../../context/CategoryContext';
 import { useTag } from '../../context/TagContext';
 import { useProductContext } from '../../context/ProductContext';
+import { useTagsContext } from '../../context/TagsContext';
 
 const ProductEditForm = ({ product, onClose }) => {
   const [editedProduct, setEditedProduct] = useState({
@@ -48,8 +49,8 @@ const ProductEditForm = ({ product, onClose }) => {
     onClose(); 
   };
 
-  const categories = useCategory();
-  const tags = useTag();
+  const {categories} = useCategoryContext();
+  const {tags} = useTagsContext();
 
   return (
     <div className='container'>

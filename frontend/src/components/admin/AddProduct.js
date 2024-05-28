@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useProductContext } from '../../context/ProductContext';
-import { useCategory } from '../../context/CategoryContext';
+import { useCategoryContext } from '../../context/CategoryContext';
 import { useTag } from '../../context/TagContext';
+import { useTagsContext } from '../../context/TagsContext';
 import '../../styles/addProduct.css';
 
 const AddProduct = () => {
@@ -15,9 +16,9 @@ const AddProduct = () => {
     tags: ''
   });
 
-  const categories = useCategory();
-  const tags = useTag();
-  const { addProduct } = useProductContext();
+  const { categories, fetchCategories } = useCategoryContext();
+  const { tags, fetchTags } = useTagsContext();
+  const { addProduct, fetchProducts } = useProductContext();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -46,6 +47,9 @@ const AddProduct = () => {
         category: '',
         tags: ''
       });
+      fetchProducts();
+      fetchCategories();
+      fetchTags();
     } catch (error) {
       console.error('Failed to add product:', error);
     }
@@ -73,11 +77,12 @@ const AddProduct = () => {
           <input type="file" accept="image/*" name="image" onChange={handleImageChange} className="form-control-file" required />
           {formData.image && (
             <div className="preview">
-              <img src={URL.createObjectURL(formData.image)} alt="Preview" className="img-fluid" />
+              <img src={URL.createObjectURL(formData.image)} alt="Preview" className="img-fluid" style={{ width: '300px' }}/>
               <p>{formData.image.name}</p>
             </div>
           )}
         </div>
+
         <div className="form-group-addProduct">
           <label htmlFor="category">Category:</label>
           <select id="category" name="category" value={formData.category} onChange={handleInputChange} className="form-control" required>

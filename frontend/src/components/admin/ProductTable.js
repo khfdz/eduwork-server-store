@@ -55,7 +55,7 @@ const ProductTable = () => {
       <table  className='table table-striped tableProduct'>
         <thead className='thProduct'>
           <tr >
-            <th >No</th>
+            <th>No</th>
             <th >Name</th>
             <th >Description</th>
             <th >Price</th>

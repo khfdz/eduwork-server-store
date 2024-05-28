@@ -3,9 +3,10 @@ import AdminContent from '../components/admin/AdminContent';
 import Navbar from '../components/navbar';
 import { CartProvider } from '../../src/context/CartContext';
 import { CategoryProvider } from '../../src/context/CategoryContext';
-import { TagProvider } from '../../src/context/TagContext';
+
 import { ProductProvider } from '../context/ProductContext';
 import '../styles/AdminDashboard.css';
+import { TagsProvider } from '../context/TagsContext';
 
 const AdminDashboard = () => {
   return (
@@ -14,11 +15,13 @@ const AdminDashboard = () => {
         <Navbar />
         <div className="admin-main">
           <CategoryProvider> 
-            <TagProvider> 
+            <TagsProvider>
+
               <ProductProvider>
                 <AdminContent />
               </ProductProvider>
-            </TagProvider>
+        
+            </TagsProvider>
           </CategoryProvider>
         </div>
       </CartProvider>
