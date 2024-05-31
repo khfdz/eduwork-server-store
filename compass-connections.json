@@ -1,0 +1,26 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "141a4ecb-2956-4785-92cd-ee3a4c41c72b",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1716966590947"
+        }
+      },
+      "favorite": {
+        "name": "eduwork server"
+      },
+      "savedConnectionType": "favorite",
+      "connectionOptions": {
+        "connectionString": "mongodb://mongo:mongo@localhost:27017/belajar?authSource=admin",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    }
+  ]
+}
