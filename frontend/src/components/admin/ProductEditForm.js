@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../styles/ProductEditForm.css'; 
 import { useCategoryContext } from '../../context/CategoryContext';
-import { useTag } from '../../context/TagContext';
 import { useProductContext } from '../../context/ProductContext';
 import { useTagsContext } from '../../context/TagsContext';
 
@@ -52,10 +51,14 @@ const ProductEditForm = ({ product, onClose }) => {
   const {categories} = useCategoryContext();
   const {tags} = useTagsContext();
 
+  // useEffect(() => {
+  //   console.log('Tags context:', tags);
+  // }, [tags]);
+
   return (
     <div className='container'>
-      <h3>Edit Product</h3>
       <form>
+      <h3 className='addCategoryTitle'>Edit Product</h3>
         <label>
           Name:
           <input
@@ -114,15 +117,21 @@ const ProductEditForm = ({ product, onClose }) => {
           </select>
         </label>
         <label>
-          <p>Image: </p>
-          <img src={imagePreview || `http://localhost:3002/images/products/${product.image_url}`} alt="Preview" className="product-image" style={{ width: '300px' }} />
-          <input type="file" name="image" onChange={handleImageChange} />
-
+          <p>Product Image: </p>
+          <img src={imagePreview || `http://localhost:3002/images/products/${product.image_url}`} alt="Preview" className="product-image" style={{ width: '300px', marginLeft: '110px'}} />
+          <input 
+          type="file" 
+          name="image" 
+          id='image'
+          className='TagUploadFile'
+          accept="image/*"
+          onChange={handleImageChange} />
+          
         </label>
-        <button type="button" onClick={handleSave}>
+        <button className='btn' type="submit" onClick={handleSave}>
           Save
         </button>
-        <button type="button" onClick={handleCancel}>
+        <button className='btn' type="submit" onClick={handleCancel}>
           Cancel
         </button>
       </form>

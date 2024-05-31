@@ -21,13 +21,14 @@ const CategoryEditForm = ({ category, onClose }) => {
 
     return (
         <div className="category-edit-form">
-            <h2>Edit Category</h2>
+            
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
                     handleSave();
                 }}
             >
+                <h2 className="addCategoryTitle">Edit Category</h2>
                 <label htmlFor="name">Name:</label>
                 <input
                     type="text"
@@ -40,8 +41,8 @@ const CategoryEditForm = ({ category, onClose }) => {
                         })
                     }
                 />
-                <button type="submit">Save</button>
-                <button type="button" onClick={onClose}>Cancel</button>
+                <button className="btn" type="submit">Save</button>
+                <button className="btn" type="submit" onClick={onClose}>Cancel</button>
             </form>
         </div>
     );

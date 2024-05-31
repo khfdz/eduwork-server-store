@@ -3,24 +3,11 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/tags.css';
+import { useTagsContext } from '../context/TagsContext';
 
 const Tags = ({ onTagsChange }) => {
-    const [tags, setTags] = useState([]);
+    const { tags } = useTagsContext();
     const [selectedTags, setSelectedTags] = useState([]);
-
-    useEffect(() => {
-        async function fetchTags() {
-            try {
-                const response = await fetch('http://localhost:3002/api/tags');
-                const data = await response.json();
-                setTags(data);
-            } catch (error) {
-                console.error('Error fetching tags:', error);
-            }
-        }
-
-        fetchTags();
-    }, []);
 
     const handleTagClick = (tagName) => {
         if (selectedTags.includes(tagName)) {
@@ -31,10 +18,10 @@ const Tags = ({ onTagsChange }) => {
     };
 
     useEffect(() => {
-        onTagsChange(selectedTags); // Panggil fungsi onTagsChange dengan selectedTags sebagai argumen
+        onTagsChange(selectedTags);
     }, [selectedTags]);
 
-    console.log('Selected tags:', selectedTags); // Tambahkan console log untuk selectedTags
+    console.log('Selected tags:', selectedTags);
 
     return (
         <div className="container">
@@ -42,7 +29,7 @@ const Tags = ({ onTagsChange }) => {
                 {tags.map((tag, index) => (
                     <button 
                         key={index} 
-                        className={`tag ${selectedTags.includes(tag.name) ? 'active' : ''}`} // Tambahkan kelas 'active' jika tag dipilih
+                        className={`tag ${selectedTags.includes(tag.name) ? 'active' : ''}`} 
                         onClick={() => handleTagClick(tag.name)}
                     >
                         <img src={`http://localhost:3002/images/products/${tag.image_url}`} alt={tag.name} className="tagImage" />

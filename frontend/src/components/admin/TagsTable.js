@@ -53,7 +53,7 @@ const TagsTable = () => {
   return (
     <div className='container'>
       <div className="">
-        <h2 className='tagListTitle'>Tag List</h2>
+        <h2 className='tagListTitle'></h2>
         <table className='tableTags'>
           <thead className='thTag'>
             <tr>

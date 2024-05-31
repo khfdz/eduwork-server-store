@@ -72,12 +72,17 @@ const AddProduct = () => {
           <textarea id="description" name="description" value={formData.description} onChange={handleInputChange} className="form-control" required></textarea>
         </div>
         <div className="form-group-addProduct">
-          <label>Image:</label>
-          <input type="file" accept="image/*" name="image" onChange={handleImageChange} className="form-control-file" required />
+          <label>Product Image:</label>
+          <input 
+          type="file" 
+          accept="image/*" 
+          name="image" 
+          onChange={handleImageChange} 
+          className="TagUploadFile" required />
           {formData.image && (
             <div className="preview">
-              <img src={URL.createObjectURL(formData.image)} alt="Preview" className="img-fluid" style={{ width: '300px' }}/>
-              <p>{formData.image.name}</p>
+              <img src={URL.createObjectURL(formData.image)} alt="Preview" className="img-fluid" style={{ width: '300px', marginLeft: '110px'}}/>
+             
             </div>
           )}
         </div>

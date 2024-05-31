@@ -41,23 +41,33 @@ const TagsEditForm = ({ tag, onClose }) => {
     return (
         <div className='container'>
             <form>
-            <h3>Edit Tag</h3>
+            
                 <label>
+                    <h3 className='addCategoryTitle'>Edit Tag</h3>
                     Name:
                     <input
                         type="text"
+                    
                         value={editedTag.name}
                         onChange={(e) => setEditedTag({ ...editedTag, name: e.target.value })}
                     />
                 </label>
                 <label>
-          <p>Image: </p>
-          <img src={imagePreview || `http://localhost:3002/images/products/${tag.image_url}`} alt="Preview" className="product-image" style={{ width: '300px' }} />
-          <input type="file" name="image" onChange={handleImageChange} />
+          <p>Tag Image: </p>
+          <div className='preview'>
+          <img src={imagePreview || `http://localhost:3002/images/products/${tag.image_url}`} alt="Preview" className="product-image" style={{ width: '300px', marginLeft: '110px', marginBottom: '20px'}} />
+          </div>
+          <input 
+          type="file" 
+          name="image"
+          id='image'
+          accept="image/*"
+          className='TagUploadFile' 
+          onChange={handleImageChange} />
 
         </label>
-                <button type="button" onClick={handleSave}>Save</button>
-                <button type="button" onClick={handleCancel}>Cancel</button>
+                <button className="btn" type="submit" onClick={handleSave}>Save</button>
+                <button className='btn' type="submit" onClick={handleCancel}>Cancel</button>
 
             </form>
         </div>

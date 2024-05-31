@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 35%; /* Lebar popup */
+  width: 40%; /* Lebar popup */
   height: 100%;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -307,9 +307,9 @@ td:first-child {
   width: 50%;
 }
 
-.garisTotal {
+/* .garisTotal {
  
-}
+} */
 
 .paginationButtons button {
   margin-right: 5px;
