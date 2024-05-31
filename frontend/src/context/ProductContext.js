@@ -27,7 +27,7 @@ export const ProductProvider = ({ children }) => {
     }
   };
 
-  // Fungsi untuk menghapus produk
+ 
   const deleteProduct = async (productId) => {
     try {
       const token = localStorage.getItem('token');
@@ -38,7 +38,7 @@ export const ProductProvider = ({ children }) => {
         }
       });
       if (response.ok) {
-        // Hapus produk dari state setelah berhasil dihapus dari server
+        
         setProducts(products.filter(product => product._id !== productId));
       } else {
         console.error('Failed to delete product:', response.statusText);

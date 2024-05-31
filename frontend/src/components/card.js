@@ -6,9 +6,12 @@ import { CartContext } from '../../src/context/CartContext';
 import { useCategoryContext } from '../context/CategoryContext';
 
 const CardsList = () => {
-    const { fetchCartData } = useContext(CartContext);
+    const { fetchCartData, addToCart } = useContext(CartContext);
     const { searchQuery, selectedTags, setSelectedTags } = useAppContext();
     const { selectedCategory } = useCategoryContext();
+    
+    // State untuk menyimpan judul kategori yang dipilih
+    const [categoryTitle, setCategoryTitle] = useState("Recommended Products");
 
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -19,67 +22,43 @@ const CardsList = () => {
             try {
                 const tagsQueryString = selectedTags.length > 0 ? `&tags=${selectedTags.join('&tags=')}` : '';
                 const categoryQueryString = selectedCategory ? `&category=${selectedCategory}` : '';
-                const url = `http://localhost:3002/api/products?q=${searchQuery}${tagsQueryString}${categoryQueryString}`;
-    
+                const url = `http://localhost:3002/api/products?q=${searchQuery}${categoryQueryString}${tagsQueryString}`;
+
                 const response = await fetch(url);
                 const responseData = await response.json();
                 setProducts(responseData.data);
+
+                // Perbarui judul kategori berdasarkan kategori yang dipilih
+                setCategoryTitle(selectedCategory ? selectedCategory : "Recommended Products");
             } catch (error) {
                 console.error('Error fetching products:', error);
             }
         };
-
+    
         fetchProducts();
     }, [searchQuery, selectedTags, selectedCategory]);
-
-    const addToCart = async (productId) => {
-        const requestData = {
-            items: [{
-                product: {
-                    _id: productId
-                },
-                qty: 1
-            }]
-        };
-
-        try {
-            const token = localStorage.getItem('token'); 
-            const response = await fetch('http://localhost:3002/api/carts', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` 
-                },
-                body: JSON.stringify(requestData)
-            });
-            const data = await response.json();
-            fetchCartData(); 
-        } catch (error) {
-            console.error('Error adding to cart:', error);
-        }
-    };
-
+    
     const totalPages = Math.ceil(products.length / productsPerPage);
-
+    
     const nextPage = () => {
         setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
     };
-
+    
     const prevPage = () => {
         setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
     };
-
+    
     const goToPage = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-
+    
     const startIndex = (currentPage - 1) * productsPerPage;
     const endIndex = startIndex + productsPerPage;
     const currentProducts = products.slice(startIndex, endIndex);
-
+    
     return (
         <div className="container">
-            <p className="recomended">Recommended Products</p>
+            <p className="recomended">{categoryTitle}</p> 
             <div className="row">
                 {currentProducts.map((product, index) => (
                     <div key={index} className="card">
@@ -110,6 +89,6 @@ const CardsList = () => {
             </div>
         </div>
     );
-}
+};
 
 export default CardsList;
