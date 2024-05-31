@@ -1,0 +1,9 @@
+.addProductTitle {
+    color: #555;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.btnSubmitAddNewProduct {
+    margin-top: 20px;
+}

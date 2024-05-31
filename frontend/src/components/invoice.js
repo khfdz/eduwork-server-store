@@ -29,7 +29,7 @@ const InvoiceTable = () => {
         <div className="invoice-container">
             {latestInvoice && (
                 <div className="invoice-wrapper">
-                    <h2>Invoice</h2>
+                    <h2 className="invoice-title">Invoice</h2>
                     <table className="invoice-table">
                         <tbody>
                             <tr>

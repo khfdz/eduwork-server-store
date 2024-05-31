@@ -7,6 +7,7 @@ import Card from '../../src/components/card';
 import { useAppContext } from '../context/AppContext';
 import '../styles/Home.css'; 
 import { CartProvider } from '../../src/context/CartContext';
+import { CategoryProvider } from '../../src/context/CategoryContext';
 
 
 const Home = () => {
@@ -26,11 +27,13 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <CategoryProvider>
       <CartProvider>
       <Navbar onSearch={handleSearch} onCategory={handleCategory}/>
       <Tags onTagsChange={handleTags} />
       <Card searchQuery={searchQuery} selectedTags={selectedTags} selectedCategory={selectedCategory}/>
       </CartProvider>
+      </CategoryProvider>
     </div>
   );
 };

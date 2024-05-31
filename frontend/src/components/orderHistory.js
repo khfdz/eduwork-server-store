@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/orderHistory.css';
-import Order from './order'; // Import komponen Order
-import Invoice from './invoice'; // Import komponen Invoice
+import Order from './order'; 
+import Invoice from './invoice'; 
+import Profile from './profile';
 
 const OrderHistory = () => {
     const [orders, setOrders] = useState([]);
     const [showItems, setShowItems] = useState({});
-    const [selectedOrderId, setSelectedOrderId] = useState(null); // Tambah state untuk menyimpan ID pesanan yang dipilih
-    const [selectedInvoiceId, setSelectedInvoiceId] = useState(null); // Tambah state untuk menyimpan ID invoice yang dipilih
+    const [selectedOrderId, setSelectedOrderId] = useState(null); 
+    const [selectedInvoiceId, setSelectedInvoiceId] = useState(null); 
+    const [showOrderHistory, setShowOrderHistory] = useState(true);
 
     useEffect(() => {
         const fetchOrders = async () => {
@@ -49,7 +51,15 @@ const OrderHistory = () => {
         setSelectedInvoiceId(selectedInvoiceId === orderId ? null : orderId); // Toggle selectedInvoiceId
     };
 
+    const handleBackClick = () => {
+        setShowOrderHistory(false);
+    };
+
+
     return (
+        <>
+        {showOrderHistory &&(
+        <div>
         <div className="orderHistoryContainer mt-5">
             <h2 className="orderHistoryTitle">Order History</h2>
             <table className="orderHistoryTable table table-striped table-bordered">
@@ -71,7 +81,7 @@ const OrderHistory = () => {
                                 <td>IDR {order.order_items.reduce((total, item) => total + item.price * item.qty, order.delivery_fee)}</td>
                                 <td>{order.status}</td>
                                 <td>
-                                    <button className="btn btn-secondary btn-sm orderHistoryButton" onClick={() => toggleInvoiceDetails(order.order_number)}>
+                                    <button className="showInvoiceButton" onClick={() => toggleInvoiceDetails(order.order_number)}>
                                         {selectedInvoiceId === order.order_number ? "Hide" : "Show"}
                                     </button>
                                 </td>
@@ -116,7 +126,14 @@ const OrderHistory = () => {
                     ))}
                 </tbody>
             </table>
+            
         </div>
+        <button onClick={handleBackClick} className='btn backEdit'>Back</button>
+    </div>
+    )
+    }
+    {!showOrderHistory &&  <Profile />}
+    </>
     );
 };
 

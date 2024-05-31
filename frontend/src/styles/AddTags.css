@@ -1,0 +1,13 @@
+.addTagsTitle {
+    color: #555;
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.btnSubmitAddTags {
+    margin-top: 5px;
+}
+
+.btnRemoveImage {
+    margin-top: 10px;
+}

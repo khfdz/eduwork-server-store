@@ -3,7 +3,7 @@
     margin-bottom: 0px;
     background-color: #e52269;
     border-radius: 30px;
-    height: 550px;
+    height: 850px;
 
 }
 
@@ -14,14 +14,26 @@
     color: white;
 }
 
-.btnSubmit {
-    margin-top: 45px;
-    margin-bottom: 0px;
+.btnEdit {
     align-items: center;
     justify-content: center;
     display: flex;
     border: none;
-    background-color: white;
+    background-color: #e52269;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 20PX;
+}
+
+.btnDelete {
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    background-color: #e52269;
+    color: white;
     border-radius: 10px;
     width: 100%;
     font-size: 20PX;
@@ -32,15 +44,19 @@
     justify-content: center;
     margin-top: 40px;
     margin-bottom: -70px;
+    background-color: #e52269;
 }
 
 .buttonActive {
     background-color: #c01856;
     cursor: pointer;
+    color: white;
+    
 }
 
 .buttonNonActive {
     background-color: white;
+    
 }
 
 .address{
@@ -49,4 +65,10 @@
 
 .backEdit {
     margin-top: 20px;
+}
+
+.formEditAddress {
+    width: 90%;
+    margin-top: 40px;
+    box-shadow: 0px 10px 20px -10px;
 }

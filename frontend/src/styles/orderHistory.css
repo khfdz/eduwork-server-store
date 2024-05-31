@@ -1,19 +1,30 @@
 /* orderHistory.css */
 
 .orderHistoryContainer {
-    max-width: 800px;
-    margin: 0 auto;
+    background-color: #e52269;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
   }
   
   .orderHistoryTitle {
     text-align: center;
     margin-bottom: 20px;
+    color: white;
   }
   
   .orderHistoryTable {
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
+    align-items: center;
+    justify-content: center;
+
+    
+
   }
   
   .orderHistoryTable th {
@@ -94,4 +105,13 @@
 
   .orderInvoice{
     width: 80px !important;
+  }
+
+  .showInvoiceButton {
+    background-color: #e52269;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
   }

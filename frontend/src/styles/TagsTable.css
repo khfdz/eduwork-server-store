@@ -4,28 +4,30 @@
   margin-bottom: 20px;
 }
 
-.tags-table {
+.tableTags {
   align-items: center;
   justify-content: center;
-  margin-left: 60px;
+  color: #555;
   width: 100%;
   border-collapse: collapse;
-  vertical-align: inherit;
+  background-color: white;
   border-spacing: 0;
   border: 1px solid #ddd; /* Add border to table */
 }
 
-.tags-table th, .tags-table td {
+.tableTags th, .tableTags td {
   border: 1px solid #ddd; /* Add border to table cells */
   padding: 8px;
 }
 
 .thTag {
+  border: 1px solid #ddd;
   text-align: center;
   background-color: #f2f2f2; /* Optional: Add background color to header */
 }
 
 .tbodyTag {
+  border: 1px solid #ddd;
   align-items: center;
   justify-content: center;
 }
@@ -43,16 +45,16 @@
 }
 
 .tag-name {
-  width: 100px !important;
+  width: 150px !important;
   text-align: center;
 }
 
 .tag-image {
-  width: 100px !important;
+  width: 150px !important;
   text-align: center;
 }
 
 .tag-action {
-  width: 100px !important;
+  width: 150px !important;
   text-align: center;
 }

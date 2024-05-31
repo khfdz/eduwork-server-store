@@ -3,28 +3,27 @@ import AdminContent from '../components/admin/AdminContent';
 import Navbar from '../components/navbar';
 import { CartProvider } from '../../src/context/CartContext';
 import { CategoryProvider } from '../../src/context/CategoryContext';
-
 import { ProductProvider } from '../context/ProductContext';
 import '../styles/AdminDashboard.css';
 import { TagsProvider } from '../context/TagsContext';
 
 const AdminDashboard = () => {
   return (
-    <div className="admin-dashboard">
-      <CartProvider>
-        <Navbar />
-        <div className="admin-main">
-          <CategoryProvider> 
+    <div className='AdminDashboardContainer'>
+    <CategoryProvider> 
+      <div className="admin-dashboard">
+        <CartProvider>
+          <Navbar />
+          <div className="admin-main">
             <TagsProvider>
-
               <ProductProvider>
                 <AdminContent />
               </ProductProvider>
-        
             </TagsProvider>
-          </CategoryProvider>
-        </div>
-      </CartProvider>
+          </div>
+        </CartProvider>
+      </div>
+    </CategoryProvider>
     </div>
   );
 };

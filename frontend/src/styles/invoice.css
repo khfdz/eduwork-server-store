@@ -25,3 +25,8 @@
 .invoice-table tbody tr:hover {
     background-color: #ddd;
 }
+
+.invoice-title {
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,51 @@
+.admin-content {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px; /* Adjust the padding to move content down from the top */
+}
+
+.contentAdmin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Add some space between the buttons */
+}
+
+.buttonContent {
+  margin: 10px;
+}
+
+.contenCategory,
+.contentTag,
+.contentProduct {
+  width: 100%; /* Adjust as necessary */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  .admin-buttons {
+   
+    display: flex;
+    flex-direction: column; /* Mengatur tata letak menjadi kolom */
+    align-items: center; /* Pusatkan tombol-tombol secara horizontal */
+    margin-bottom: 20px; /* Jarak bawah dari tombol-tombol */
+  }
+  
+
+  .buttonContent {
+    background-color: #e52269;
+    color: white;
+    border: none;
+    font-size: 22px;
+    font-weight: bolder;
+    height: 45px;
+    border-radius: 20px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    margin-top: 20px;
+  }
+

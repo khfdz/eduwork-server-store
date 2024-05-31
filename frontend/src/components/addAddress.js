@@ -211,12 +211,12 @@ const AddAddress = ({ userId, fullName }) => {
     {!showAddAddress && <Profile/> }
     {showAddAddress &&(
       <>
-          <div className="address-container">
+          <div className="addAddress-container">
     <div className="container add-address">
       <h2 className="title">Add Address</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
+      <form className="formAddAddress" onSubmit={handleSubmit}>
+        <div className="">
           <label htmlFor="provinsi">Provinsi</label>
           <select
             className="form-control"
@@ -285,11 +285,8 @@ const AddAddress = ({ userId, fullName }) => {
             onChange={(e) => setDetail(e.target.value)}
           />
         </div>
-
-        <div className="form-group">
-        </div>
         
-        <button type="submit" className="btn submitAddAddress">
+        <button type="submit" className="submitAddAddress">
           Submit
         </button>
       </form>

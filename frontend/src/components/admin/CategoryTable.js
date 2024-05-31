@@ -51,17 +51,17 @@ const CategoryTable = () => {
 
     return (
         <div className='container'>
-            <div className="">
-                <h2 className='categoryListTitle'>Category List</h2>
-                <table className='table table-striped category-table'>
+            <div className="categoryContainerz">
+                <h2 className='categoryListTitle'></h2>
+                <table className='tableCategory'>
                     <thead className='thCategory'>
                         <tr>
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>Action</th>
+                            <th className='categoryNo'>No</th>
+                            <th className='categoryName'>Name</th>
+                            <th className='categoryAction'>Action</th>
                         </tr>
                     </thead>
-                    <tbody className='tbodyCategory'> 
+                    <tbody className=''> 
                         {currentCategories.map((category, index) => (
                             <React.Fragment key={category._id}>
                                 <tr className='rowCategory'> 

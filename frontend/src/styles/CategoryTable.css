@@ -1,0 +1,48 @@
+.addNewCategoryTitle {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .categoryListTitle {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .tableCategory {
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-spacing: 0;
+    border: 1px solid #ddd; /* Add border to table */
+  }
+
+  .thCategory {
+    text-align: center;
+    background-color: #f2f2f2; /* Optional: Add background color to header */
+  }
+  
+  .tableCategory th, .tableCategory td {
+    border: 1px solid #ddd; /* Add border to table cells */
+    
+  }
+
+  .categoryNo {
+    width: 100px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+  }
+
+  .categoryName { 
+    width: 300px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+  }
+
+  .categoryAction {
+    width: 150px !important; /* Atur lebar sesuai kebutuhan */
+    text-align: center;
+  }

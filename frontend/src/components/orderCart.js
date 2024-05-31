@@ -213,52 +213,84 @@ const OrderCart = () => {
         <>
           <div className="backgroundOverlay"></div>
           <div className={`orderCart ${showOrderCart ? "orderCartVisible" : "orderCartHidden"}`}>
-            <div className="container">
-              <div className="container orderListLayer1">
+            <div className="popup-card-orderCart">
+              
                 <div className="row orderListRow">
-                  <div className="col-8 orderList">Order List</div>
-                  <div className="col-4 orderListTanggal">{orderDate}</div>
-                  <button className="closeButton" onClick={handleClose}>X</button>
+                  <div className="orderList col-8">Order List</div>
+                  <div className="orderListTanggal col-4">{orderDate}</div>
+                  
+                  <button className="close-button-cart" onClick={handleClose}>X</button>
                 </div>
 
 
-                {displayedItems.map((item, index) => (
-                  <div key={item._id} className="container orderListLayer2">
-                    <button className="eraseButton" onClick={() => handleRemoveCartItem(item._id)}>X</button>
-                    <div className="row">
-                      <img src={`http://localhost:3002/images/products/${item.product.image_url}`} alt={item.product.name} className="orderListImage" />
-                      <div className="col-5 orderListText">
-                        <p className="orderListJudul">{item.product.name}</p>
-                        <p className="orderListHarga">IDR {item.price}</p>
-                        <input
-                          className="orderListInput"
-                          type="text"
-                          placeholder="Add Notes..."
-                          value={item.notes}
-                          onChange={(e) => {
-                            const newNotes = e.target.value;
-                            const updatedItems = [...orderItems];
-                            const itemIndex = startIndex + index; // Menyesuaikan indeks item dengan indeks pada halaman
-                            updatedItems[itemIndex].notes = newNotes;
-                            setOrderItems(updatedItems);
-                          }} // Mengupdate catatan secara lokal saat diubah
-                        />
-                      </div>
-                      <div className="col-2 quantityControl">
-                        <div className="quantityText">{item.qty}</div>
-                        <button className="quantityButton1" onClick={() => handleSubtractQty(index)} disabled={item.qty === 0}> - </button>
-                        <button className="quantityButton2" onClick={() => handleAddQty(index)}> + </button>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+               {displayedItems.map((item, index) => (
+  <div key={item._id} className="container orderListLayer2">
+    <div className="row position-relative">
+      <button className="eraseButton position-absolute" onClick={() => handleRemoveCartItem(item._id)}>X</button>
+      <div className="col-4">
+        <img src={`http://localhost:3002/images/products/${item.product.image_url}`} alt={item.product.name} className="orderListImage" />
+      </div>
+      <div className="col-4">
+        <div className="row">
+          <div className="col-12 orderListText">
+            <p className="orderListJudul">{item.product.name}</p>
+          </div>
+          <div className="col-12 orderListText">
+            <p className="orderListHarga">IDR {item.price}</p>
+          </div>
+          <div className="col-12 orderListText">
+            <input
+              className="orderListInput"
+              type="text"
+              placeholder="Add Notes..."
+              value={item.notes}
+              onChange={(e) => {
+                const newNotes = e.target.value;
+                const updatedItems = [...orderItems];
+                const itemIndex = startIndex + index;
+                updatedItems[itemIndex].notes = newNotes;
+                setOrderItems(updatedItems);
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      
+      <div className="col-4">
 
-                <div className="paginationButtons">
-                  {Array.from({ length: totalPages }, (_, i) => (
-                    <button key={i + 1} onClick={() => handlePageChange(i + 1)}>{i + 1}</button>
-                  ))}
-                </div>
+      <div className="rowQuantityButton" style={{ display: "flex" }}>
+  <div className="col-3 quantityControl">
+    <button className="quantityButton1" onClick={() => handleSubtractQty(index)} disabled={item.qty === 0}> - </button>
+  </div>
+  <div className="col-3 quantityControl">
+    <div className="quantityText">{item.qty}</div>
+  </div>
+  <div className="col-3 quantityControl">
+    <button className="quantityButton2" onClick={() => handleAddQty(index)}> + </button>
+  </div>
+</div>
 
+
+
+      </div>
+    </div>
+  </div>
+))}
+               <div className="paginationButtons">
+  {Array.from({ length: totalPages }, (_, i) => (
+    <button
+      key={i + 1}
+      className={`pagination ${page === i + 1 ? 'active' : ''}`}
+      onClick={() => handlePageChange(i + 1)}
+    >
+      {i + 1}
+    </button>
+  ))}
+</div>
+
+
+
+              <div className="subtotalContainer">
                 <div className="subtotalLayer">
                   <table className="tableCart">
                     <tbody>
@@ -276,11 +308,12 @@ const OrderCart = () => {
                       </tr>
                     </tbody>
                   </table>
-                  <hr className="garisTotal"></hr>
+                  
                   <button className="orderButton" onClick={handleOrderClick} disabled={totalQty === 0}>Order</button>
                 </div>
+                </div>
 
-              </div>
+
             </div>
           </div>
         </>

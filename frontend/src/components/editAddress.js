@@ -6,7 +6,7 @@ import Profile from './profile';
 const EditAddress = ({ userId }) => {
     const [addresses, setAddresses] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [ShowEditAddress, setShowEditAddress] = useState(true);
+    const [showEditAddress, setShowEditAddress] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -66,6 +66,29 @@ const EditAddress = ({ userId }) => {
         }
     };
 
+    const handleDelete = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(`http://localhost:3002/api/delivery-addresses/${addresses[currentIndex]._id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`
+                }
+            });
+            if (response.ok) {
+                console.log('Address deleted successfully');
+                // Remove the deleted address from the state
+                setAddresses(prevAddresses => prevAddresses.filter((_, index) => index !== currentIndex));
+                // Reset currentIndex to 0 after deletion
+                setCurrentIndex(0);
+            } else {
+                console.error('Failed to delete address');
+            }
+        } catch (error) {
+            console.error('Failed to delete address:', error);
+        }
+    };
+
     const handleSelectAddress = (index) => {
         setCurrentIndex(index);
     };
@@ -76,48 +99,49 @@ const EditAddress = ({ userId }) => {
 
     return (
         <>
-            {ShowEditAddress && (
+            {showEditAddress && (
                 <div>
                     <div className="edit-address-container">
-                        <h2 className="title">Edit Address</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="kelurahan">Kelurahan</label>
-                                <input type="text" className="form-control" id="kelurahan" name="kelurahan" value={addresses[currentIndex]?.kelurahan || ''} onChange={handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="kecamatan">Kecamatan</label>
-                                <input type="text" className="form-control" id="kecamatan" name="kecamatan" value={addresses[currentIndex]?.kecamatan || ''} onChange={handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="kabupaten">Kabupaten</label>
-                                <input type="text" className="form-control" id="kabupaten" name="kabupaten" value={addresses[currentIndex]?.kabupaten || ''} onChange={handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="provinsi">Provinsi</label>
-                                <input type="text" className="form-control" id="provinsi" name="provinsi" value={addresses[currentIndex]?.provinsi || ''} onChange={handleChange} />
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="detail">Detail</label>
-                                <input type="text" className="form-control" id="detail" name="detail" value={addresses[currentIndex]?.detail || ''} onChange={handleChange} />
-                            </div>
+                        <div className="container editAddress">
+                            <h2 className="title">Edit Address</h2>
+                            <form className='formEditAddress' onSubmit={handleSubmit}>
+                                <div className="">
+                                    <label htmlFor="kelurahan">Kelurahan</label>
+                                    <input type="text" className="form-control" id="kelurahan" name="kelurahan" value={addresses[currentIndex]?.kelurahan || ''} onChange={handleChange} />
+                                </div>
+                                <div className="">
+                                    <label htmlFor="kecamatan">Kecamatan</label>
+                                    <input type="text" className="form-control" id="kecamatan" name="kecamatan" value={addresses[currentIndex]?.kecamatan || ''} onChange={handleChange} />
+                                </div>
+                                <div className="">
+                                    <label htmlFor="kabupaten">Kabupaten</label>
+                                    <input type="text" className="form-control" id="kabupaten" name="kabupaten" value={addresses[currentIndex]?.kabupaten || ''} onChange={handleChange} />
+                                </div>
+                                <div className="">
+                                    <label htmlFor="provinsi">Provinsi</label>
+                                    <input type="text" className="form-control" id="provinsi" name="provinsi" value={addresses[currentIndex]?.provinsi || ''} onChange={handleChange} />
+                                </div>
+                                <div className="">
+                                    <label htmlFor="detail">Detail</label>
+                                    <input type="text" className="form-control" id="detail" name="detail" value={addresses[currentIndex]?.detail || ''} onChange={handleChange} />
+                                </div>
 
-                            <div className='form-group'>
-                                <button type="submit" className="btnSubmit">Submit</button>
-                            </div>
-
+                                <div className=''>
+                                    <button type="submit" className="btnEdit">Save</button>
+                                    <button type="" onClick={handleDelete} className="btnDelete">Delete</button>
+                                </div>
+                            </form>
                             <div className="address-buttons">
                                 {addresses.map((address, index) => (
-                                    <button key={index} onClick={() => handleSelectAddress(index)} className={index === currentIndex ? "buttonActive" : "d"}>{index + 1}</button>
+                                    <button key={index} onClick={() => handleSelectAddress(index)} className={index === currentIndex ? "buttonActive" : ""}>{index + 1}</button>
                                 ))}
                             </div>
-                            
-                        </form>
+                        </div>
                     </div>
                     <button onClick={handleBackClick} className='btn backEdit'>Back</button>
                 </div>
             )}
-            {!ShowEditAddress && <Profile />}
+            {!showEditAddress && <Profile />}
         </>
     );
 }

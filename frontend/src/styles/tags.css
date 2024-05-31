@@ -26,13 +26,18 @@
 }
 
 .tag:hover {
-    background-color: #f9e3eb;
+    background-color: #e52269;
     cursor: pointer; /* Menambahkan kursor pointer saat dihover */
+    box-shadow: 0px 10px 30px -15px;
+    color: white;
 }
 
 .tag.active {
-    background-color: #f9e3eb; /* Warna latar belakang tag saat aktif */
+    background-color: #e52269 !important;
+    color: white !important;
+    box-shadow: 0px 10px 30px -15px black!important;
 }
+
 
 .tag .tagImage {
     width: 50px;

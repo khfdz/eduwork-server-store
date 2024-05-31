@@ -9,6 +9,11 @@ export const useCategoryContext = () => {
 
 export const CategoryProvider = ({ children }) => {
   const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
+
+  const changeSelectedCategory = (category) => {
+    setSelectedCategory(category);
+  };
 
   useEffect(() => {
     fetchCategory();
@@ -100,7 +105,8 @@ export const CategoryProvider = ({ children }) => {
 
 
   return (
-    <CategoryContext.Provider value={{ categories, fetchCategory, deleteCategory, addCategory, updateCategory }}>
+    <CategoryContext.Provider 
+    value={{ categories, fetchCategory, deleteCategory, addCategory, updateCategory, setSelectedCategory, selectedCategory, changeSelectedCategory }}>
       {children}
     </CategoryContext.Provider>
   );

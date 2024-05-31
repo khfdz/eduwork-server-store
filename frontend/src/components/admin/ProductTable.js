@@ -50,9 +50,9 @@ const ProductTable = () => {
 
   return (
     <div className='container'>
-      <div className='productBackground'>
-      <h2 className='productListTitle'>Product List</h2>
-      <table  className='table table-striped tableProduct'>
+      <div className=''>
+      <h2 className='productListTitle'></h2>
+      <table  className='tableProduct'>
         <thead className='thProduct'>
           <tr >
             <th>No</th>
@@ -86,8 +86,8 @@ const ProductTable = () => {
                     </React.Fragment>
                   ) : (
                     <React.Fragment>
-                    <button className='btn btn-primary' onClick={() => handleEdit(product)}>Edit</button>
-                    <button className='btn btn-primary' onClick={() => handleDelete(product._id)}>Delete</button>
+                    <button className='btn' onClick={() => handleEdit(product)}>Edit</button>
+                    <button className='btn' onClick={() => handleDelete(product._id)}>Delete</button>
                     </React.Fragment>
                   )}
                 </td>

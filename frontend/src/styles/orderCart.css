@@ -1,3 +1,17 @@
+.popup-card-orderCart{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35%; /* Lebar popup */
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 999; /* Di atas latar belakang */
+  padding: 20px;
+  transition: transform 0.3s ease; /* Efek slide */
+  background-color: #eff0f2;
+}
+
 .orderListRow {
     display: flex;
     margin-left: 140px;
@@ -6,6 +20,7 @@
 .orderList{
     font-weight: bolder;
     font-size: 40px;
+    margin-left: -50px;
 }
 
 .orderListTanggal {
@@ -13,30 +28,45 @@
     margin-top: 20px;
 }
 
+.close-button-cart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  background-color: #e52269;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+}
+
+
+
 .orderListLayer1 {
     background-color: #eff0f2;
     padding: 20px;
     border-radius: 20px;
     display: flex;
-    width: 1000px;
-    height: 1500px;
+    width: 100%;
     flex-direction: column;
 }
 
 .orderListLayer2 {
     margin-top: 30px;
     background-color: white;
-    padding: 20px;
     border-radius: 20px;
-    width: 640px;
-    height: 180px;
+    width: 90%;
+    
     box-shadow: 5px 10px 20px -5px;
     
 }
 
 .eraseButton {
-  top: -5px;
-  right: -565px;
+  top: 10px;
+  right: 10px;
   background-color: #e52269;
   color: white;
   border: none;
@@ -44,30 +74,27 @@
   cursor: pointer;
   height: 30px;
   width: 30px;
-  position: relative;
 }
 
-
 .orderListImage {
-    width: 200px;
-    border-radius: 30px;
-    box-shadow: 5px 10px 20px -10px;
-    padding-left: 0px;
-    padding-right: 0px;
+    width: 180px;
+    margin-top: 30px;
+    margin-bottom: 25px;
     margin-left: 10px;
-    margin-top: -25px;
-    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 20px -10px;
+
   }
   
   .orderListText {
     font-size: 20px;
-    margin-left: 20px;
-    margin-top: -20px;
+    margin-top: 0px;
   }
 
   .orderListJudul {
     font-size: 20px;
-    font-weight: bolder
+    font-weight: bolder;
+    margin-top: 20px;
   }
 
   .orderListHarga {
@@ -85,41 +112,50 @@
   }
 
   .quantityControl {
-    margin-top: 32px;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    font-size: 30px;
+    display: flex;
 }
 
-.quantity{
+/* .quantity{
     margin-top: -500px;
+} */
+
+.rowQuantityButton {
+  padding-top: 90px;
 }
 
 .quantityText {
-    margin-top: -30px;
-    font-size: 40px;
+    margin-top: -10px;
+    font-size: 50px;
+    text-align: center;
 }
 
 .quantityButton1 {
-    width: 30px;
-    height: 30px;
-    background-color: #e52269;
-    color: white;
-    border: none;
-    font-size: 20px;
-    font-weight: bolder;
-    margin-right: 5px;
+background-color: #e52269;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  display: flex;
 }
 
 .quantityButton2 {
-    width: 30px;
-    height: 30px;
-    background-color: #e52269;
-    color: white;
-    border: none;
-    font-size: 20px;
-    font-weight: bolder;
+  
+  background-color: #e52269;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  display: flex;
 }
 
 .orderListLayer3 {
@@ -146,6 +182,15 @@
     border-radius: 20px;
     margin-top: 20px;
 }
+
+.paginationButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+}
+
 
 .orderCart {
     position: fixed;
@@ -174,21 +219,7 @@
     z-index: 999; /* Atur z-index lebih rendah dari orderCart agar tidak menutupi orderCart */
   }
 
-  .closeButton {
-  background-color: #e52269;
-  color: white;
-  border: none;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-top: -50px;
-  margin-left: 740px;
-  cursor: pointer;
-  display: flex;
-  height: 50px;
-  width: 50px;
-}
+  
 
 .closeButton:hover {
   background-color: #d81b60;
@@ -215,7 +246,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-left: 150px;
+  display: flex;
   margin-top: 20px;
 }
 
@@ -235,26 +266,36 @@
   margin-top: 10px;
 }
 
+.subtotalContainer { 
+  margin-top: 50px;
+  width: 100%;
+}
+
 .subtotalLayer {
-  margin-bottom: -20px;
-  margin-top: 40px;
-  margin-left: 70px;
-  height: 300px;
-  width: 800px;
+ 
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+  border-radius: 30px;
   background-color: #f9fafc;
-  padding-top: 130px;
-  border-radius: 20px 20px 0px 0px;
-  padding-left: 50px;
-  box-shadow: 0px 0px 0px 0px black;
+  box-shadow: 0px 10px 30px 0.1px black;
 }
 
 .tableCart {
-  margin-top: -100px;
+  /* margin-top: -100px;
   width: 100%;
   border-collapse: collapse;
-  margin-left: 80px;
   font-size: 20px;
   font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  text-align: center; */
+  font-size: 30px;
 }
 
 td {
@@ -267,14 +308,7 @@ td:first-child {
 }
 
 .garisTotal {
-  margin-top: 10px;
-  border: 2px black solid;
-  display: flex;
-  height: 2px;
-  margin-left: -50px;
-  display: flex;
-  margin-top: -50px;
-  margin-bottom: 50px;
+ 
 }
 
 .paginationButtons button {
@@ -290,5 +324,5 @@ td:first-child {
 
 .paginationButtons button.active {
   background-color: #e52269;
-  color: #e52269;
+  color: white;
 }

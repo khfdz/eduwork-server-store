@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/order.css";
 import Invoice from './invoice'; // Import komponen Invoice
+import { CartContext } from "../context/CartContext";
 
 const Order = ({ orderItems, subtotal, discount, total, deliveryAddresses, onClose }) => {
+  const { fetchCartData } = useContext(CartContext);
+
+
   const [selectedAddressIndex, setSelectedAddressIndex] = useState(0);
   const [orderSuccess, setOrderSuccess] = useState(false); // State untuk menentukan apakah order berhasil dibuat
 
@@ -41,6 +45,7 @@ const Order = ({ orderItems, subtotal, discount, total, deliveryAddresses, onClo
 
       // Set state menjadi true saat order berhasil dibuat
       setOrderSuccess(true);
+      fetchCartData();
 
       // Menampilkan pesan sukses dan menutup Order setelah 2 detik
       setTimeout(() => {
@@ -89,10 +94,11 @@ const Order = ({ orderItems, subtotal, discount, total, deliveryAddresses, onClo
           </div>
           
         </div>
-        <div className="orderTotal">
+        <div className="orderTotalz">
             <p>Subtotal: IDR {subtotal}</p>
             <p>Delivery Fee: IDR 20000</p>
             <p>Discount: IDR {discount}</p>
+            <hr></hr>
             <p>Total: IDR {total}</p>
           </div>
 

@@ -48,8 +48,8 @@ const AddTags = () => {
   return (
     <div className='container'>
       <form onSubmit={handleSubmit}>
-        <div className='form-group-addTags'>
-          <h2>Add New Tag</h2>
+        <div className='add-tags-containers'>
+          <h2 className='addTagsTitle'>Add New Tag</h2>
           <label htmlFor="name">Tag Name:</label>
           <input
             type="text"
@@ -70,17 +70,17 @@ const AddTags = () => {
             accept="image/*"
             onChange={handleImageChange}
             required
-            className='form-control-file'
+            className='TagUploadFile'
           />
           {formData.image && (
             <div className='preview'>
               <img src={URL.createObjectURL(formData.image)} alt="Preview" className='ing-fluid' style={{ width: '300px',marginLeft: '100px' }}/>
               {/* <p>{formData.image.name}</p> */}
-              <button type="button" onClick={handleRemoveImage} className='btn btn-danger'>Remove Image</button>
+              <button type="button" onClick={handleRemoveImage} className='btn btnRemoveImage'>Remove Image</button>
             </div>
           )}
         </div>  
-        <button className='btn btn-primary' type="submit">Submit</button>
+        <button className='btn btnSubmitAddTags' type="submit">Submit</button>
       </form>
     </div>
   );

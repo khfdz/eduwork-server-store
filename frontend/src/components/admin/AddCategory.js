@@ -34,8 +34,8 @@ const AddCategory = () => {
         <div className='container'>
         <div className="add-category-container">
             <form onSubmit={handleSubmit}>
-            <h2>Add New Category</h2>
-                <div className="form-group">
+            <p className='addCategoryTitle'>Add New Category</p>
+                <div className="">
                     <label htmlFor="name">Tag Name:</label>
                     <input
                         type="text"

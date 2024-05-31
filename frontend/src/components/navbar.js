@@ -9,15 +9,17 @@ import cartIcon from '../assets/images/cart.svg';
 import hamburgerIcon from '../assets/images/hamburger.svg';
 import { useAppContext } from '../context/AppContext';
 import { CartContext } from '../../src/context/CartContext';
+import { useCategoryContext } from '../context/CategoryContext'; // Impor useCategoryContext
 
 const Navbar = () => {
-  const { setSearchQuery, setSelectedCategory } = useAppContext();
+  const { setSearchQuery } = useAppContext();
+  const { cartQuantity, userData, fetchCartData } = useContext(CartContext);
+  const { categories, selectedCategory, setSelectedCategory } = useCategoryContext(); // Gunakan useCategoryContext
 
   const [showOrderCart, setShowOrderCart] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
   const [query, setQuery] = useState('');
-  const { cartQuantity, userData, fetchCartData } = useContext(CartContext);
 
   useEffect(() => {
     fetchCartData();
@@ -26,11 +28,14 @@ const Navbar = () => {
   const handleClickCart = () => {
     setShowOrderCart(prevState => !prevState);
   };
-
   const handleSubmenuClick = (category) => {
     setShowOptions(false);
     setSelectedCategory(category);
+    console.log("Selected category:", category);
   };
+  
+  
+  
 
   const handleClickHamburger = () => {
     setShowHamburger(prevState => !prevState);
@@ -52,8 +57,11 @@ const Navbar = () => {
             <a className="nav-link" href="#">Categories</a>
             {showOptions && (
               <ul className="sub-menu">
-                <li><a href="#" onClick={() => handleSubmenuClick('Food')}>Foods</a></li>
-                <li><a href="#" onClick={() => handleSubmenuClick('Drink')}>Drinks</a></li>
+                {categories.map(category => ( // Gunakan data kategori untuk membuat submenu
+                  <li key={category._id}>
+                    <a href="#" onClick={() => handleSubmenuClick(category.name)}>{category.name}</a>
+                  </li>
+                ))}
               </ul>
             )}
           </li>
@@ -68,10 +76,10 @@ const Navbar = () => {
               </li>
             </>
           )}
-          <li className="nav-item">
+          
             <input
-              type="text"
-              className="form-control search"
+              type=""
+              className="searchInput"
               placeholder="Search Menu..."
               style={{
                 backgroundImage: `url(${searchIcon})`
@@ -79,7 +87,9 @@ const Navbar = () => {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
-          </li>
+
+            
+          
           <button className="searchButton" onClick={() => setSearchQuery(query)}>Search</button>
           <li className="nav-item nav-link cart" href="#" style={{
             backgroundImage: `url(${cartIcon})`

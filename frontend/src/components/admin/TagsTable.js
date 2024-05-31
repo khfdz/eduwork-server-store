@@ -54,7 +54,7 @@ const TagsTable = () => {
     <div className='container'>
       <div className="">
         <h2 className='tagListTitle'>Tag List</h2>
-        <table className='table table-striped tags-table'>
+        <table className='tableTags'>
           <thead className='thTag'>
             <tr>
               <th>No</th>

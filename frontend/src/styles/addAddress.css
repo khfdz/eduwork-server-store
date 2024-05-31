@@ -16,7 +16,7 @@
 }
 
 .submitAddAddress {
-    margin-top: 40px;
+    margin-top: 0px;
 }
 
 .form-group {
@@ -27,5 +27,30 @@
 }
 
 .submitAddAddress {
-    margin-bottom: -30px;
+    margin-bottom: 0px;
+    background-color: #e52269;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 20PX;
+}
+
+.formAddAddress {
+    margin-top: 40px;
+    width: 90%;
+}
+
+.addAddress-container {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #e52269;
+    border-radius: 30px;
+    height: 580px;
+    
+}
+
+.add-address {
+ 
+    margin-bottom: 50px;
 }

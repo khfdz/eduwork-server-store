@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useProductContext } from '../../context/ProductContext';
 import { useCategoryContext } from '../../context/CategoryContext';
-import { useTag } from '../../context/TagContext';
 import { useTagsContext } from '../../context/TagsContext';
 import '../../styles/addProduct.css';
 
@@ -60,7 +59,7 @@ const AddProduct = () => {
       <div className='addProductBackground'>
       <form onSubmit={handleSubmit}>
         <div className="form-group-addProduct">
-      <h2 className=''>Add New Product</h2>
+      <h2 className='addProductTitle'>Add New Product</h2>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} className="form-control" required />
         </div>
@@ -101,7 +100,7 @@ const AddProduct = () => {
             ))}
           </select>
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btnSubmitAddNewProduct">Submit</button>
       </form>
     </div>
     </div>
