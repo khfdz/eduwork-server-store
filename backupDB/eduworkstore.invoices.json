@@ -1,0 +1,145 @@
+[{
+  "_id": {
+    "$oid": "6658e28e57a38d9b6f3e6820"
+  },
+  "sub_total": 142000,
+  "delivery_fee": 20000,
+  "delivery_address": {
+    "provinsi": "JAWA BARAT",
+    "kabupaten": "KABUPATEN KARAWANG",
+    "kecamatan": "KARAWANG BARAT",
+    "kelurahan": "TANJUNGPURA",
+    "detail": "Kp Sangkali Rt10 / 16"
+  },
+  "total": 162000,
+  "payment_status": "waiting_payment",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "order": {
+    "$oid": "6658e28e57a38d9b6f3e680e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T20:33:18.950Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T20:33:18.950Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658e33357a38d9b6f3e68ab"
+  },
+  "sub_total": 324000,
+  "delivery_fee": 20000,
+  "delivery_address": {
+    "provinsi": "JAWA BARAT",
+    "kabupaten": "KABUPATEN KARAWANG",
+    "kecamatan": "KARAWANG BARAT",
+    "kelurahan": "TANJUNGPURA",
+    "detail": "Kp Sangkali Rt10 / 16"
+  },
+  "total": 344000,
+  "payment_status": "waiting_payment",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "order": {
+    "$oid": "6658e33357a38d9b6f3e68a2"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T20:36:03.639Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T20:36:03.639Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658e3eba076f7fa528d3b60"
+  },
+  "sub_total": 171000,
+  "delivery_fee": 20000,
+  "delivery_address": {
+    "provinsi": "JAWA BARAT",
+    "kabupaten": "KABUPATEN KARAWANG",
+    "kecamatan": "KARAWANG BARAT",
+    "kelurahan": "TANJUNGPURA",
+    "detail": "Kp Sangkali Rt10 / 16"
+  },
+  "total": 191000,
+  "payment_status": "waiting_payment",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "order": {
+    "$oid": "6658e3eba076f7fa528d3b55"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T20:39:07.045Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T20:39:07.045Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66595757d75fc5c01e791f4e"
+  },
+  "sub_total": 213000,
+  "delivery_fee": 20000,
+  "delivery_address": {
+    "provinsi": "JAWA BARAT",
+    "kabupaten": "KABUPATEN KARAWANG",
+    "kecamatan": "KARAWANG BARAT",
+    "kelurahan": "TANJUNGPURA",
+    "detail": "Kp Sangkali Rt10 / 16"
+  },
+  "total": 233000,
+  "payment_status": "waiting_payment",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "order": {
+    "$oid": "66595757d75fc5c01e791f39"
+  },
+  "createdAt": {
+    "$date": "2024-05-31T04:51:35.557Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-31T04:51:35.557Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665a1994fd6c9f17803b2183"
+  },
+  "sub_total": 433000,
+  "delivery_fee": 20000,
+  "delivery_address": {
+    "provinsi": "JAWA BARAT",
+    "kabupaten": "KABUPATEN KARAWANG",
+    "kecamatan": "KARAWANG BARAT",
+    "kelurahan": "TANJUNGPURA",
+    "detail": "Kp Sangkali Rt10 / 16"
+  },
+  "total": 453000,
+  "payment_status": "waiting_payment",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "order": {
+    "$oid": "665a1994fd6c9f17803b216e"
+  },
+  "createdAt": {
+    "$date": "2024-05-31T18:40:20.588Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-31T18:40:20.588Z"
+  },
+  "__v": 0
+}]

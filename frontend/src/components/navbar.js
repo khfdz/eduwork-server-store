@@ -28,14 +28,12 @@ const Navbar = () => {
   const handleClickCart = () => {
     setShowOrderCart(prevState => !prevState);
   };
+
   const handleSubmenuClick = (category) => {
     setShowOptions(false);
     setSelectedCategory(category);
     console.log("Selected category:", category);
   };
-  
-  
-  
 
   const handleClickHamburger = () => {
     setShowHamburger(prevState => !prevState);
@@ -43,6 +41,15 @@ const Navbar = () => {
 
   const handleCloseHamburger = () => {
     setShowHamburger(false);
+  };
+
+  const handleCategoryClick = (category) => {
+    if (category === 'All') {
+      setSelectedCategory(null);
+    } else {
+      setSelectedCategory(category);
+    }
+    setShowOptions(false);
   };
 
   return (
@@ -57,15 +64,17 @@ const Navbar = () => {
             <a className="nav-link" href="#">Categories</a>
             {showOptions && (
               <ul className="sub-menu">
-                {categories.map(category => ( // Gunakan data kategori untuk membuat submenu
+                <li>
+                  <a href="#" onClick={() => handleCategoryClick('All')}>All</a>
+                </li>
+                {categories.map(category => (
                   <li key={category._id}>
-                    <a href="#" onClick={() => handleSubmenuClick(category.name)}>{category.name}</a>
+                    <a href="#" onClick={() => handleCategoryClick(category.name)}>{category.name}</a>
                   </li>
                 ))}
               </ul>
             )}
           </li>
-
           {userData && userData.role === 'admin' && (
             <>
               <li className="nav-item">
@@ -76,7 +85,7 @@ const Navbar = () => {
               </li>
             </>
           )}
-          
+            
             <input
               type=""
               className="searchInput"
@@ -88,8 +97,6 @@ const Navbar = () => {
               onChange={(e) => setQuery(e.target.value)}
             />
 
-            
-          
           <button className="searchButton" onClick={() => setSearchQuery(query)}>Search</button>
           <li className="nav-item nav-link cart" href="#" style={{
             backgroundImage: `url(${cartIcon})`

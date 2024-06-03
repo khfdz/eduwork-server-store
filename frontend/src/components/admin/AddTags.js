@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useTagsContext } from '../../context/TagsContext';
-import '../../styles/AddTags.css'; // Import file CSS untuk styling
+import { useCategoryContext } from '../../context/CategoryContext';
+import '../../styles/AddTags.css'; // Import file CSS untuk stylingfff
 
 const AddTags = () => {
   
   const [formData, setFormData] = useState({
     name: '',
-    image: null
+    image: null,
+    category: '',
   });
 
   const { addTag } = useTagsContext();
+  const { categories, fetchCategories } = useCategoryContext();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -38,7 +41,8 @@ const AddTags = () => {
       await addTag(formData);
       setFormData({
         name: '',
-        image: null
+        image: null,
+        category: '',
       });
     } catch (error) {
       console.error('Failed to add tag:', error);
@@ -50,6 +54,24 @@ const AddTags = () => {
       <form onSubmit={handleSubmit}>
         <div className='add-tags-containers'>
           <h2 className='addTagsTitle'>Add New Tag</h2>
+
+          <label htmlFor="category">Category:</label>
+          <select
+            id="category"
+            name="category"
+            value={formData.category}
+            onChange={handleInputChange}
+            required
+            className='form-control'
+          >
+            <option value="">-- Select Category --</option>
+            {categories.map((category) => (
+              <option key={category._id} value={category.name}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+
           <label htmlFor="name">Tag Name:</label>
           <input
             type="text"
@@ -61,6 +83,7 @@ const AddTags = () => {
             className='form-control'
           />
         </div>
+
         <div className='form-group-addTags'>
           <label htmlFor="image">Tag Image:</label>
           <input

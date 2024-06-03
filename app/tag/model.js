@@ -13,6 +13,12 @@ const tagSchema = Schema({
     image_url: {
         type: String
     },
+
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: 'Category'
+    },
+    
 })
 
 module.exports = model('Tag', tagSchema)

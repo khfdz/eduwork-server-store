@@ -74,7 +74,7 @@ const Login = () => {
                             </div>
                         ) : (
                             <form onSubmit={handleSubmit}>
-                                <div className="form-group">
+                                <div className="">
                                     {/* <label htmlFor="email">Email</label> */}
                                     <input
                                         type="email"
@@ -85,7 +85,7 @@ const Login = () => {
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
                                 </div>
-                                <div className="form-group">
+                                <div className="">
                                     {/* <label htmlFor="password">Password</label> */}
                                     <input
                                         type="password"

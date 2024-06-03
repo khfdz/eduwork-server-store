@@ -1,0 +1,1848 @@
+[{
+  "_id": {
+    "$oid": "6656dab162cd5d293b38ce76"
+  },
+  "name": "Spicy Miso Ramen",
+  "description": "Ramen in spicy miso broth with pork, green onions, bamboo shoots, soft-boiled egg.",
+  "price": 35000,
+  "image_url": "8fa315693b59f4f86720484e17f245d8.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:35:13.991Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:38:08.662Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656db1d62cd5d293b38cefb"
+  },
+  "name": "Shoyu Ramen",
+  "description": "Soy sauce-based broth ramen with chicken slices, green onions, nori, soft-boiled egg.",
+  "price": 34000,
+  "image_url": "7c8f2dc8a4980755fee67c0bb1e55c1d.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:37:01.584Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:37:01.584Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656db3162cd5d293b38cf04"
+  },
+  "name": "Tonkotsu Ramen",
+  "description": "Creamy pork bone broth ramen with chashu pork, green onions, wood ear mushrooms.",
+  "price": 36000,
+  "image_url": "2ea24bb93452475194dac110c1156c5f.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:37:21.978Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:37:21.978Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656db7262cd5d293b38cf5b"
+  },
+  "name": "Miso Corn Ramen",
+  "description": "Miso ramen with butter, corn, pork slices, green onions, soft-boiled egg.",
+  "price": 37000,
+  "image_url": "2d0e055d6e3b87f5c0dc3811ec2d882d.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:38:26.922Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:56:39.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656db9062cd5d293b38cf64"
+  },
+  "name": "Vegetable Ramen",
+  "description": "Light vegetable broth ramen with fresh vegetables, tofu, mushrooms.",
+  "price": 32000,
+  "image_url": "f76de03b8a02713915527c064905b71a.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:38:56.071Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:38:56.071Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656dba562cd5d293b38cf6d"
+  },
+  "name": "Spicy Beef Ramen",
+  "description": "Spicy beef broth ramen with beef slices, green onions, bean sprouts.",
+  "price": 38000,
+  "image_url": "2feef3119b1e819f58e1f4866f4b6a31.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:39:17.914Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:39:17.914Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656dbd062cd5d293b38cf76"
+  },
+  "name": "Seafood Ramen",
+  "description": "Rich seafood broth ramen with shrimp, squid, fish cakes, green onions.",
+  "price": 39000,
+  "image_url": "84ddc6b46d11e139be5865493892950c.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:40:00.203Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:40:00.203Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656dbe662cd5d293b38cf7f"
+  },
+  "name": "Chicken Katsu Ramen",
+  "description": "Savory broth ramen with crispy chicken cutlets, green onions, soft-boiled egg.",
+  "price": 35000,
+  "image_url": "5f15f4167b6e59b660659dedc5c91af8.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:40:22.714Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:40:22.714Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656dbf162cd5d293b38cf88"
+  },
+  "name": "Kimchi Ramen",
+  "description": "Spicy kimchi ramen with pork slices, green onions, soft-boiled egg.",
+  "price": 36000,
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:40:33.715Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:55:57.068Z"
+  },
+  "__v": 0,
+  "image_url": "8321f3bbee975736c36dcc82f048af10.jpg"
+},
+{
+  "_id": {
+    "$oid": "6656dbfd62cd5d293b38cf91"
+  },
+  "name": "Garlic Tonko Ramen",
+  "description": "Rich Tonkotsu ramen with garlic, chashu pork, green onions, soft-boiled egg.",
+  "price": 37000,
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:40:45.509Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T11:41:50.653Z"
+  },
+  "__v": 0,
+  "image_url": "2963ed9fdbe67630015a1517348576b0.jpg"
+},
+{
+  "_id": {
+    "$oid": "6656dc0f62cd5d293b38cf9a"
+  },
+  "name": "Shio Ramen",
+  "description": "Salt-based broth ramen with chicken slices, green onions, bamboo shoots.",
+  "price": 33000,
+  "image_url": "8cbe88e052510881fe88c74fe8b98004.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:41:03.510Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:41:03.510Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656dc2262cd5d293b38cfa3"
+  },
+  "name": "Black Garlic Oil Ramen",
+  "description": "Ramen with black garlic oil, chashu pork, green onions, soft-boiled egg.",
+  "price": 38000,
+  "image_url": "752da1ebee26d917406d916265581ce6.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:41:22.585Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:41:22.585Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656ddf562cd5d293b38cfac"
+  },
+  "name": "Classic Nigiri Sushi",
+  "description": "Salmon nigiri on seasoned rice with wasabi, pickled ginger, soy sauce.",
+  "price": 50000,
+  "image_url": "47ce6a02b2835433bd04442b3d499ced.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:49:09.925Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:49:09.925Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656de1562cd5d293b38cfb5"
+  },
+  "name": "Tuna Nigiri Sushi",
+  "description": "Tuna slices on seasoned rice with wasabi, pickled ginger, soy sauce.",
+  "price": 52000,
+  "image_url": "ae860873112604ab2aef89639deffe4b.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:49:41.065Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:49:41.065Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656de2f62cd5d293b38cfbe"
+  },
+  "name": "Eel Nigiri Sushi",
+  "description": "Grilled eel with sweet soy glaze on seasoned rice, pickled ginger.",
+  "price": 55000,
+  "image_url": "ceb91834214e10b51ed95c6508123d9f.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:50:07.454Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:50:07.454Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656de5062cd5d293b38cfc7"
+  },
+  "name": "Shrimp Nigiri Sushi",
+  "description": "Shrimp on seasoned rice with wasabi, pickled ginger, soy sauce.",
+  "price": 48000,
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:50:40.148Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:51:11.619Z"
+  },
+  "__v": 0,
+  "image_url": "8433f9ee4d1c2b55308d30a5b2ec1457.jpg"
+},
+{
+  "_id": {
+    "$oid": "6656de8f62cd5d293b38cfd9"
+  },
+  "name": "Salmon Roe Nigiri",
+  "description": "Salmon roe atop seasoned rice, served with wasabi, pickled ginger, soy sauce.",
+  "price": 60000,
+  "image_url": "57ad972f31c65b9407c47f59a90dd4ac.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:51:43.183Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:51:43.183Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656dea562cd5d293b38cfe2"
+  },
+  "name": "Octopus Nigiri",
+  "description": "Octopus slices on seasoned rice, served with wasabi, pickled ginger, soy sauce.",
+  "price": 54000,
+  "image_url": "0b57b69114f25ac95b4042e2af403193.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:52:05.302Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:52:05.302Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656deb862cd5d293b38cfeb"
+  },
+  "name": "Tamago Nigiri",
+  "description": "Sweet tamago on seasoned rice with wasabi, pickled ginger, soy sauce.",
+  "price": 46000,
+  "image_url": "dc50e82f4bafd711ce92da3ff752b467.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:52:24.581Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:52:24.581Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656dedc62cd5d293b38cff4"
+  },
+  "name": "Yellowtail Nigiri",
+  "description": "Yellowtail slices on seasoned rice with wasabi, pickled ginger, soy sauce.",
+  "price": 53000,
+  "image_url": "2f1e99563b9dc38ad42969980c2e5136.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:53:00.524Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:53:00.524Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656df2a62cd5d293b38cffd"
+  },
+  "name": "Mackerel Nigiri",
+  "description": "Marinated mackerel on seasoned rice, served with wasabi, pickled ginger, soy sauce.",
+  "price": 50000,
+  "image_url": "4c596c14349d0cb6ee352123930981dc.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:54:18.929Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:54:18.929Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656df4062cd5d293b38d006"
+  },
+  "name": "Crab Nigiri",
+  "description": "Fresh crab meat on seasoned rice with wasabi, pickled ginger, soy sauce.",
+  "price": 58000,
+  "image_url": "f1032653863d92a27fd44427dddbff72.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:54:40.217Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:54:40.217Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656df5662cd5d293b38d00f"
+  },
+  "name": "Scallop Nigiri",
+  "description": "Scallop slices on seasoned rice, served with wasabi, pickled ginger, soy sauce.",
+  "price": 62000,
+  "image_url": "469ce0f64ae2af06cda1e2180e41fc6c.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:55:02.271Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:55:02.271Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656df7362cd5d293b38d018"
+  },
+  "name": "Unagi Nigiri",
+  "description": "Grilled eel with sweet soy glaze on seasoned rice, pickled ginger.",
+  "price": 55000,
+  "image_url": "c2614cd1e5504c6507caa65d4c79950e.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T07:55:31.507Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T07:55:31.507Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e1f562cd5d293b38d0e2"
+  },
+  "name": "Margherita Pizza",
+  "description": "Margherita pizza with crispy crust, tomatoes, mozzarella cheese, basil leaves, olive oil.",
+  "price": 70000,
+  "image_url": "a5ab1461393c1dbff413203e76008e13.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:06:13.542Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:06:13.542Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e21062cd5d293b38d0eb"
+  },
+  "name": "Pepperoni Pizza",
+  "description": "Pepperoni pizza with crispy crust, spicy pepperoni slices, mozzarella cheese, tomato sauce.",
+  "price": 75000,
+  "image_url": "ca9694a2817e950ff5880a62a7c33dbd.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:06:40.376Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:06:40.376Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e22262cd5d293b38d0f4"
+  },
+  "name": "Hawaiian Pizza",
+  "description": "Hawaiian pizza with crispy crust, pineapple chunks, ham slices, mozzarella, tomato sauce.",
+  "price": 72000,
+  "image_url": "a2ef6695915eff26b4bef866a4ccf010.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:06:58.582Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:06:58.582Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e23662cd5d293b38d0fd"
+  },
+  "name": "Vegetarian Pizza",
+  "description": "Vegetarian pizza with crispy crust, fresh vegetables, mozzarella cheese, tomato sauce.",
+  "price": 68000,
+  "image_url": "2795ea260e93a02badeb229d2a55f66f.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:07:18.682Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:07:18.682Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e24a62cd5d293b38d106"
+  },
+  "name": "BBQ Chicken Pizza",
+  "description": "BBQ chicken pizza with crispy crust, tender chicken, red onions, mozzarella, BBQ sauce.",
+  "price": 78000,
+  "image_url": "519fdc69e95f3a76142dd5e72c771536.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:07:38.018Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:07:38.018Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e27162cd5d293b38d10f"
+  },
+  "name": "Four Cheese Pizza",
+  "description": "Four cheese pizza with crispy crust, mozzarella, cheddar, parmesan, gorgonzola, tomato sauce.",
+  "price": 80000,
+  "image_url": "13ef86b212ac95ccaadb94c905993b29.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:08:17.043Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:08:17.043Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e28862cd5d293b38d118"
+  },
+  "name": "Mushroom Pizza",
+  "description": "Mushroom pizza with crispy crust, variety of mushrooms, mozzarella cheese, tomato sauce.",
+  "price": 70000,
+  "image_url": "78aba7e90acb14b6a7e78c21e76c73bd.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:08:40.626Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:08:40.626Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e29c62cd5d293b38d121"
+  },
+  "name": "Seafood Pizza",
+  "description": "Seafood pizza with crispy crust, shrimp, squid, mussels, mozzarella, tomato sauce.",
+  "price": 85000,
+  "image_url": "5c3340b6f91b3af1d97f05f3fddabeb0.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:09:00.853Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:09:00.853Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e2b462cd5d293b38d12a"
+  },
+  "name": "Spincah Feta Pizza",
+  "description": "Spinach and feta pizza with crispy crust, fresh spinach, feta cheese, mozzarella, tomato sauce.",
+  "price": 75000,
+  "image_url": "e33a5f8cb41115130ed1a8504ee87cc4.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:09:24.793Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:09:24.793Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e2c762cd5d293b38d133"
+  },
+  "name": "Sausage Pizza",
+  "description": "Sausage pizza with crispy crust, spicy sausage, bell peppers, onions, mozzarella, tomato sauce.",
+  "price": 76000,
+  "image_url": "4330d6fbad8792aa07cd86425cede90b.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:09:43.067Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:09:43.067Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e2d762cd5d293b38d13c"
+  },
+  "name": "Bufallo Chicken Pizza",
+  "description": "Buffalo chicken pizza with crispy crust, spicy buffalo chicken, mozzarella, blue cheese dressing.",
+  "price": 78000,
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:09:59.934Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:10:29.204Z"
+  },
+  "__v": 0,
+  "image_url": "06de7424a85551bf1448508a65983c77.jpg"
+},
+{
+  "_id": {
+    "$oid": "6656e2ea62cd5d293b38d145"
+  },
+  "name": "White Pizza",
+  "description": "White pizza with crispy crust, ricotta cheese, mozzarella, garlic, olive oil, fresh basil.",
+  "price": 74000,
+  "image_url": "24f3adff6bfe0ebeb73d8565e50d1273.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:10:18.571Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:10:18.571Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e47062cd5d293b38d157"
+  },
+  "name": "Chocolate Fudge",
+  "description": "Rich chocolate cake with creamy fudge icing, chocolate shavings, hint of vanilla.",
+  "price": 45000,
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:16:48.146Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:17:29.903Z"
+  },
+  "__v": 0,
+  "image_url": "be1291c94cdc522cf80d020b37e9324d.jpg"
+},
+{
+  "_id": {
+    "$oid": "6656e49062cd5d293b38d160"
+  },
+  "name": "Red Velvet Cake",
+  "description": "Moist red velvet cake with cream cheese frosting, cocoa flavor, elegant appearance.",
+  "price": 50000,
+  "image_url": "79da15625365b9b70edb6634528e3603.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:17:20.088Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:17:20.088Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e4b162cd5d293b38d172"
+  },
+  "name": "Cheesecake",
+  "description": "Classic cheesecake with creamy texture, graham cracker crust, topped with fresh berries.",
+  "price": 55000,
+  "image_url": "13dac37b0d60ada054ce4dd0484c7b3e.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:17:53.215Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:17:53.215Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e4c862cd5d293b38d17b"
+  },
+  "name": "Carrot Cake",
+  "description": "Spiced carrot cake with cream cheese frosting, moist texture, topped with chopped walnuts.",
+  "price": 48000,
+  "image_url": "458ed8e055ba42a7c97614fb88d4dcea.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:18:16.499Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:18:16.499Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e4d962cd5d293b38d184"
+  },
+  "name": "Lemon Drizzle Cake",
+  "description": "Light lemon cake with zesty lemon drizzle, moist texture, perfect balance of sweet and tart.",
+  "price": 46000,
+  "image_url": "b5fda3abc1d0e7aa6d8326bf4a9774d7.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:18:33.373Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:18:33.373Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e4ea62cd5d293b38d18d"
+  },
+  "name": "Black Forest Cake",
+  "description": "Decadent chocolate cake with layers of cherries, whipped cream, topped with chocolate shavings.",
+  "price": 52000,
+  "image_url": "fa53defe4822171f471ad1e0a20a7f72.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:18:50.541Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:18:50.541Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e50262cd5d293b38d196"
+  },
+  "name": "Tiramisu Cake",
+  "description": "Italian dessert with layers of coffee-soaked ladyfingers, mascarpone cheese, cocoa powder.",
+  "price": 58000,
+  "image_url": "afe9cba69b593251363939159bb04cc7.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:19:14.105Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:19:14.105Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e51962cd5d293b38d19f"
+  },
+  "name": "Vanilla Sponge Cake",
+  "description": "Classic vanilla sponge cake with light and fluffy texture, topped with vanilla buttercream.",
+  "price": 42000,
+  "image_url": "1df557bc4aeed7f1b737a63f7639d430.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:19:37.672Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:19:37.672Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e53262cd5d293b38d1a8"
+  },
+  "name": "Matcha Cake",
+  "description": "Unique matcha green tea cake with creamy frosting, delicate and aromatic flavor.",
+  "price": 60000,
+  "image_url": "56735f040025f99fa0fec4ff06e222ad.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:20:02.576Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:20:02.576Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e54962cd5d293b38d1b1"
+  },
+  "name": "Blueberry Muffin",
+  "description": "Moist blueberry muffin with fresh blueberries, perfect for breakfast or snack.",
+  "price": 38000,
+  "image_url": "f939d2d7748898f0aa8b7624e72377e7.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:20:25.620Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:20:25.620Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e55a62cd5d293b38d1ba"
+  },
+  "name": "Banana Bread",
+  "description": "Homemade banana bread with ripe bananas, moist texture, perfect with coffee or tea.",
+  "price": 40000,
+  "image_url": "8921b2265351804d0231dae9b9a23f99.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:20:42.104Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:20:42.104Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e56d62cd5d293b38d1c3"
+  },
+  "name": "Coconut Cake",
+  "description": "Light coconut cake with coconut cream frosting, topped with toasted coconut flakes.",
+  "price": 44000,
+  "image_url": "2816846d05e8f3f4721c6b7277151062.jpg",
+  "category": {
+    "$oid": "65f4c6fd57a65ce442f32b9c"
+  },
+  "tags": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:21:01.821Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:21:01.821Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e80d62cd5d293b38d208"
+  },
+  "name": "Mango Smoothie",
+  "description": "Refreshing mango smoothie with ripe mangoes, yogurt, and ice, perfect for hot days and tropical vibes.",
+  "price": 30000,
+  "image_url": "06b24f38bec2615d095579c063102042.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:32:13.589Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:32:13.589Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e82562cd5d293b38d211"
+  },
+  "name": "Berry Blast Smoothie",
+  "description": "Mixed berry smoothie with strawberries, blueberries, raspberries, yogurt, and ice, packed with antioxidants.",
+  "price": 32000,
+  "image_url": "105a524a414da14d4265f03bf078e30d.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:32:37.463Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:32:37.463Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e84262cd5d293b38d21a"
+  },
+  "name": "Pineapple Coconut",
+  "description": "Tropical smoothie with pineapple, coconut milk, yogurt, and ice, tastes like a vacation in a glass.",
+  "price": 34000,
+  "image_url": "61d4a4dfd15bdb519d8e6d8729f591ae.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:33:06.746Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:13:01.938Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e85a62cd5d293b38d223"
+  },
+  "name": "Green Apple Juice",
+  "description": "Fresh green apple juice with a hint of lime, perfectly refreshing and tangy, ideal for a healthy boost.",
+  "price": 28000,
+  "image_url": "1425e91ca90698a5a64682f135e7e4f4.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:33:30.115Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:33:30.115Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e86f62cd5d293b38d22c"
+  },
+  "name": "Orange Carrot Juice",
+  "description": "Healthy juice blend of fresh oranges and carrots, rich in vitamins, a perfect start to your day.",
+  "price": 30000,
+  "image_url": "fe32995b8dce1016bc96772330880e1e.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:33:51.693Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:33:51.693Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e88362cd5d293b38d235"
+  },
+  "name": "Watermelon Cooler",
+  "description": "Chilled watermelon juice with mint, perfect for a hot summer day, hydrating and delicious.",
+  "price": 31000,
+  "image_url": "a6852ef547b8aeb88a30f133cc06fe33.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:34:11.293Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:34:11.293Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e89f62cd5d293b38d23e"
+  },
+  "name": "Strawberry Lemonade",
+  "description": "Fresh lemonade mixed with ripe strawberries, sweet, tangy, and refreshing, perfect for summer afternoons.",
+  "price": 29000,
+  "image_url": "6439c4d1f74940548fb4e26c4441bd49.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:34:39.459Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:34:39.459Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e8b162cd5d293b38d247"
+  },
+  "name": "Peach Iced Tea",
+  "description": "Refreshing iced tea with juicy peach slices, perfect for summer afternoons and relaxing moments.",
+  "price": 27000,
+  "image_url": "f6e8ae88979ddcf04806a3635e940669.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:34:57.276Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:34:57.276Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e8ca62cd5d293b38d250"
+  },
+  "name": "Grapefruit Juice",
+  "description": "Freshly squeezed grapefruit juice, tangy and refreshing, boosts your morning with a vitamin C kick.",
+  "price": 30000,
+  "image_url": "f6edfd6652d7cfb5fdae7da4d5f2a046.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:35:22.663Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:35:22.663Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e8da62cd5d293b38d259"
+  },
+  "name": "Kiwi Smoothie",
+  "description": "Exotic kiwi smoothie with yogurt, ice, a perfect blend of tangy and sweet, a tropical delight.",
+  "price": 33000,
+  "image_url": "78505122fd1d0bc15b70196e54d8c134.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:35:38.276Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:35:38.276Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e8ec62cd5d293b38d262"
+  },
+  "name": "Cranberry Juice",
+  "description": "Tart cranberry juice, refreshing and perfect for a detox drink, rich in antioxidants and flavor.",
+  "price": 28000,
+  "image_url": "69f8134ae7a158eb161436ddaae16015.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:35:56.040Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:35:56.040Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656e94462cd5d293b38d26b"
+  },
+  "name": "Mixed Tropical Fruit",
+  "description": "Blend of tropical fruits: mango, pineapple, passion fruit, a taste of the tropics in every sip.",
+  "price": 35000,
+  "image_url": "05ba2df30de1499faaaa1f07dc8b994a.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "createdAt": {
+    "$date": "2024-05-29T08:37:24.513Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-29T08:37:24.513Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583f4803f7d24f4b81aea3"
+  },
+  "name": "Matcha Latte",
+  "description": "Creamy matcha latte with finely ground matcha powder, steamed milk, and a hint of sweetness, energizing and soothing.",
+  "price": 40000,
+  "image_url": "14134bd7e53faecee9a188972b454aa0.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:56:40.515Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:56:40.515Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583f6d03f7d24f4b81aeac"
+  },
+  "name": "Salted Caramel Latte",
+  "description": "Smooth latte with a rich caramel flavor, topped with a hint of sea salt, a delightful balance of sweet and salty.",
+  "price": 42000,
+  "image_url": "a2bf4df475c26d249a6cec3260a3b015.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:57:17.351Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:57:17.351Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583f8203f7d24f4b81aeb5"
+  },
+  "name": "Hazelnut Mocha",
+  "description": "Rich mocha with a blend of espresso, chocolate, and hazelnut syrup, topped with whipped cream, indulgent and comforting.",
+  "price": 45000,
+  "image_url": "a393e9edc895cde66357521e0f2a465c.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:57:38.645Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:57:38.645Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583f9c03f7d24f4b81aebe"
+  },
+  "name": "Vanilla Bean Frappuccino",
+  "description": "Iced blended drink with vanilla bean, milk, and ice, topped with whipped cream, a sweet and creamy treat.",
+  "price": 38000,
+  "image_url": "29475d957a15635fdb956d65b68e9c5a.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:58:04.065Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:58:04.065Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583fb103f7d24f4b81aec7"
+  },
+  "name": "Turmeric Latte",
+  "description": "Golden milk latte with turmeric, ginger, cinnamon, and a touch of honey, warming and health-boosting.",
+  "price": 37000,
+  "image_url": "2d4737ac8facf0f16c605d53a3f081e3.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:58:25.568Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:58:25.568Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583fcc03f7d24f4b81aed0"
+  },
+  "name": "Pumpkin Spice Latte",
+  "description": "Seasonal latte with pumpkin spice flavor, espresso, and steamed milk, topped with whipped cream, cozy and festive.",
+  "price": 44000,
+  "image_url": "f110cbb495eb8742ef59a67836fb1495.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:58:52.474Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:58:52.474Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583fde03f7d24f4b81aed9"
+  },
+  "name": "Rose Latte",
+  "description": "Floral latte with rose syrup, espresso, steamed milk, and a hint of rose petals, delicate and aromatic.",
+  "price": 41000,
+  "image_url": "a633ee004d4352aff4ed9868a4093927.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:59:10.471Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:59:10.471Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583ff603f7d24f4b81aee2"
+  },
+  "name": "Cinnamon Dolce Latte",
+  "description": "Sweet latte with cinnamon dolce syrup, espresso, steamed milk, and whipped cream, comforting and flavorful.",
+  "price": 43000,
+  "image_url": "d73338a2b92f044115094a9938942549.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:59:34.285Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:59:34.285Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658400a03f7d24f4b81aeeb"
+  },
+  "name": "Honey Lavender Latte",
+  "description": "Delicate latte with honey and lavender syrup, espresso, and steamed milk, soothing and fragrant.",
+  "price": 39000,
+  "image_url": "f11ae581fb7249cc48ddf973c41d0c34.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T08:59:54.977Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T08:59:54.977Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658401f03f7d24f4b81aef4"
+  },
+  "name": "Gingerbread Latte",
+  "description": "Festive latte with gingerbread syrup, espresso, steamed milk, and whipped cream, perfect for the holiday season.",
+  "price": 44000,
+  "image_url": "dc0c389aca3b964ca37265092aed4069.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:00:15.497Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:00:15.497Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658403303f7d24f4b81aefd"
+  },
+  "name": "Maple Pecan Latte",
+  "description": "Cozy latte with maple syrup, pecan flavor, espresso, and steamed milk, warm and nutty.",
+  "price": 42000,
+  "image_url": "1b7529fd8a7e0a4decaa919d21b8d5d9.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:00:35.974Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:00:35.974Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658404803f7d24f4b81af06"
+  },
+  "name": "Black Sesame Latte",
+  "description": "Unique latte with black sesame syrup, espresso, steamed milk, and a nutty finish, bold and delicious.",
+  "price": 45000,
+  "image_url": "cbb9562ec89f3bcbe6756d07c7c11086.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:00:56.940Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:00:56.940Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658418403f7d24f4b81af0f"
+  },
+  "name": "Espresso",
+  "description": "Strong and rich espresso shot with a bold flavor, perfect for coffee lovers who enjoy pure coffee essence.",
+  "price": 20000,
+  "image_url": "0986a0227f6ddd0163fa8961ca7833eb.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:06:12.762Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:06:12.762Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658419903f7d24f4b81af18"
+  },
+  "name": "Americano",
+  "description": "Smooth Americano with a rich espresso base, diluted with hot water, simple yet flavorful.",
+  "price": 22000,
+  "image_url": "8f4c06f5805d289de4689c45ae275610.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:06:33.043Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:06:33.043Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665841ad03f7d24f4b81af21"
+  },
+  "name": "Cappuccino",
+  "description": "Classic cappuccino with equal parts espresso, steamed milk, and milk foam, a perfect balance of strong and creamy.",
+  "price": 30000,
+  "image_url": "0afde154eb3afc26caaed78433a7ef07.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:06:53.788Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:06:53.788Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665841bc03f7d24f4b81af2a"
+  },
+  "name": "Latte",
+  "description": "Creamy latte with rich espresso and steamed milk, topped with a light layer of foam, smooth and comforting.",
+  "price": 32000,
+  "image_url": "f6725976f11510f3e89a8b4211fdb034.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:07:08.141Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:07:08.141Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665841ce03f7d24f4b81af33"
+  },
+  "name": "Mocha",
+  "description": "Decadent mocha with espresso, steamed milk, and chocolate syrup, topped with whipped cream, a chocolatey delight.",
+  "price": 35000,
+  "image_url": "68aaf757f86ebabaef9fc746794160d7.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:07:26.470Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:07:26.470Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665841dd03f7d24f4b81af3c"
+  },
+  "name": "Flat White",
+  "description": "Smooth flat white with rich espresso and velvety steamed milk, a creamy and balanced coffee experience.",
+  "price": 30000,
+  "image_url": "1055900b4cd3ff86e9a55ae5d644b1bf.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:07:41.667Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:07:41.667Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665841ef03f7d24f4b81af45"
+  },
+  "name": "Macchiato",
+  "description": "Bold macchiato with a shot of espresso and a dollop of frothy steamed milk, simple and intense.",
+  "price": 28000,
+  "image_url": "7548d16069b03a300d19891d0d42a131.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:07:59.499Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:07:59.499Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665841fc03f7d24f4b81af4e"
+  },
+  "name": "Affogato",
+  "description": "Indulgent affogato with a shot of espresso poured over a scoop of vanilla ice cream, a delightful coffee dessert.",
+  "price": 38000,
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:08:12.149Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T11:47:32.428Z"
+  },
+  "__v": 0,
+  "image_url": "c06dca4142786cc7018b18f82f281e93.jpg"
+},
+{
+  "_id": {
+    "$oid": "6658420c03f7d24f4b81af57"
+  },
+  "name": "Cold Brew",
+  "description": "Smooth and refreshing cold brew coffee, steeped for 12 hours, served over ice, perfect for hot days.",
+  "price": 35000,
+  "image_url": "51f6f6bada6adc3d106c03c9c4df127b.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:08:28.160Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:08:28.160Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658421e03f7d24f4b81af60"
+  },
+  "name": "Irish Coffee",
+  "description": "Rich coffee with a hint of whiskey, brown sugar, and topped with whipped cream, a warming and indulgent treat.",
+  "price": 40000,
+  "image_url": "8116eb6e1f409b57da60e1ae3ed82343.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:08:46.312Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:08:46.312Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658423003f7d24f4b81af69"
+  },
+  "name": "Cortado",
+  "description": "Balanced cortado with equal parts espresso and steamed milk, smooth and rich, ideal for a quick coffee fix.",
+  "price": 28000,
+  "image_url": "2a1299e7bbc21bf90f34634da3017707.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:09:04.903Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:09:04.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6658424203f7d24f4b81af72"
+  },
+  "name": "Turkish Coffee",
+  "description": "Traditional Turkish coffee brewed with finely ground coffee beans, rich and aromatic, served in a small cup.",
+  "price": 33000,
+  "image_url": "9112b64d9268c1d464862e39d0da26ee.jpg",
+  "category": {
+    "$oid": "65f4c70257a65ce442f32b9e"
+  },
+  "tags": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T09:09:22.740Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T09:09:22.740Z"
+  },
+  "__v": 0
+}]

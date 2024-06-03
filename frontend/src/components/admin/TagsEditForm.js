@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import "../../styles/TagsEditForm.css";
 import { useTagsContext } from '../../context/TagsContext';
+import { useCategoryContext } from '../../context/CategoryContext';
 
 const TagsEditForm = ({ tag, onClose }) => {
     const [editedTag, setEditedTag] = useState({
         name: tag.name,
         image: null,
+        category: tag.category
     });
     
     const [imagePreview, setImagePreview] = useState(null);
@@ -20,12 +22,14 @@ const TagsEditForm = ({ tag, onClose }) => {
     };
 
     const { updateTag, fetchTags } = useTagsContext();
+    const { categories } = useCategoryContext();
 
     const handleSave = async () => {
         try {
             await updateTag(tag._id, {
                 name: editedTag.name,
                 image: editedTag.image,
+                category: editedTag.category
             });
             onClose();
             fetchTags();
@@ -51,6 +55,23 @@ const TagsEditForm = ({ tag, onClose }) => {
                         value={editedTag.name}
                         onChange={(e) => setEditedTag({ ...editedTag, name: e.target.value })}
                     />
+                </label>
+                <label>
+          <p>Tag Category: </p>
+          <select
+            className='form-control'
+            id="category"
+            name="category"
+            value={editedTag.category}
+            onChange={(e) => setEditedTag({ ...editedTag, category: e.target.value })}
+          >
+            <option value="">--Select Category--</option>
+            {categories.map((category) => (
+              <option key={category._id} value={category.name}>
+                {category.name}
+              </option>
+            ))}
+          </select>
                 </label>
                 <label>
           <p>Tag Image: </p>

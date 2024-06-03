@@ -11,7 +11,7 @@ const CardsList = () => {
     const { selectedCategory } = useCategoryContext();
     
     // State untuk menyimpan judul kategori yang dipilih
-    const [categoryTitle, setCategoryTitle] = useState("Recommended Products");
+    const [categoryTitle, setCategoryTitle] = useState("All Products");
 
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -29,7 +29,7 @@ const CardsList = () => {
                 setProducts(responseData.data);
 
                 // Perbarui judul kategori berdasarkan kategori yang dipilih
-                setCategoryTitle(selectedCategory ? selectedCategory : "Recommended Products");
+                setCategoryTitle(selectedCategory ? selectedCategory : "All Products");
             } catch (error) {
                 console.error('Error fetching products:', error);
             }

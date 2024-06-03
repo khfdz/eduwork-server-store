@@ -1,0 +1,34 @@
+[{
+  "_id": {
+    "$oid": "665a1cb84bb0d08b5b0735f9"
+  },
+  "name": "Shoyu Ramen",
+  "qty": 1,
+  "price": 34000,
+  "image_url": "7c8f2dc8a4980755fee67c0bb1e55c1d.jpg",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "product": {
+    "$oid": "6656db1d62cd5d293b38cefb"
+  },
+  "notes": "",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "665a1d46160b5498e9597de7"
+  },
+  "name": "Spicy Miso Ramen",
+  "qty": 4,
+  "price": 35000,
+  "image_url": "8fa315693b59f4f86720484e17f245d8.jpg",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "product": {
+    "$oid": "6656dab162cd5d293b38ce76"
+  },
+  "notes": "",
+  "__v": 0
+}]

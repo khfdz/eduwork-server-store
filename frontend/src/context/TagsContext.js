@@ -32,6 +32,7 @@ export const TagsProvider = ({ children }) => {
             const formDataToSend = new FormData();
             formDataToSend.append('name', formData.name);
             formDataToSend.append('image', formData.image);
+            formDataToSend.append('category', formData.category);
 
             const token = localStorage.getItem('token');
 
@@ -79,6 +80,7 @@ export const TagsProvider = ({ children }) => {
             const formDataToSend = new FormData();
             formDataToSend.append('name', formData.name);
             formDataToSend.append('image', formData.image);
+            formDataToSend.append('category', formData.category);
         
         const token = localStorage.getItem('token');
         const response = await fetch(`http://localhost:3002/api/tags/${tagId}`, {

@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "66585ee34c88be48c0065714"
+  },
+  "nama": "Dhika Hafidz",
+  "kelurahan": "TANJUNGPURA",
+  "kecamatan": "KARAWANG BARAT",
+  "kabupaten": "KABUPATEN KARAWANG",
+  "provinsi": "JAWA BARAT",
+  "detail": "Kp Sangkali Rt10 / 16",
+  "user": {
+    "$oid": "66187d0c07c2c256b880a8c3"
+  },
+  "createdAt": {
+    "$date": "2024-05-30T11:11:31.801Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-30T11:32:04.542Z"
+  },
+  "__v": 0
+}]

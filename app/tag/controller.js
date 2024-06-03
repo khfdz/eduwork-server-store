@@ -2,6 +2,7 @@ const Tag = require('./model');
 const path = require('path');
 const fs = require('fs');
 const config = require('../config');
+const Category = require('../category/model');
 
 const store = async (req, res, next) => {
     try {
@@ -175,21 +176,37 @@ const destroy = async (req, res, next) => {
     }
 }
 
+// const index = async (req, res, next) => {
+//     try {
+//         let tag = await Tag.find();
+//         return res.json(tag);
+//     } catch (err) {
+//         if(err && err.name === 'ValidationError'){
+//             return res.json({
+//                 error: 1,
+//                 message: err.message,
+//                 fields: err.errors
+//             })
+//         }
+//         next(err);
+//     }
+// }
+
 const index = async (req, res, next) => {
     try {
-        let tag = await Tag.find();
-        return res.json(tag);
+        let tags = await Tag.find().populate('category');
+        return res.json(tags);
     } catch (err) {
-        if(err && err.name === 'ValidationError'){
+        if (err && err.name === 'ValidationError') {
             return res.json({
                 error: 1,
                 message: err.message,
                 fields: err.errors
-            })
+            });
         }
         next(err);
     }
-}
+};
 
 module.exports = {
     store,

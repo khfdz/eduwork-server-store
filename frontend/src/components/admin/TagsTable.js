@@ -5,6 +5,7 @@ import '../../styles/TagsTable.css'; // Import file CSS untuk styling
 
 const TagsTable = () => {
   const {tags, deleteTag} = useTagsContext();
+  console.log('Tags context:', tags);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [editingTag, setEditingTag] = useState(null);
@@ -58,6 +59,7 @@ const TagsTable = () => {
           <thead className='thTag'>
             <tr>
               <th>No</th>
+              <th>Category Relation</th>
               <th>Tag Name</th>
               <th>Image</th>
               <th>Action</th>
@@ -68,6 +70,7 @@ const TagsTable = () => {
               <React.Fragment key={tag._id}>
                 <tr className='rowTag'>
                 <td className='tag-no'>{startIndex + index + 1}</td>
+                <td className='tag-name'>{tag.category.name}</td>
                 <td className='tag-name'>{tag.name}</td>
                 <td className='tag-image'>
                   <img src={`http://localhost:3002/images/products/${tag.image_url}`} alt={tag.name} className="tag-image" />

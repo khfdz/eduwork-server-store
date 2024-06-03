@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "6656d76d62cd5d293b38ce54"
+  },
+  "name": "Ramen",
+  "image_url": "fa9d695621d611e47f8dc7866f16a812.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656d78062cd5d293b38ce57"
+  },
+  "name": "Sushi",
+  "image_url": "225bee516c5216f57c4f0b3cb13877d2.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656d78b62cd5d293b38ce5a"
+  },
+  "name": "Pizza",
+  "image_url": "2a6c591223cd41441ca8aeed8eb3c4e9.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6656d78f62cd5d293b38ce5d"
+  },
+  "name": "Cake",
+  "__v": 0,
+  "image_url": "e801b9c1e375ff98884d68fc09b0f16e.png"
+},
+{
+  "_id": {
+    "$oid": "6656d79862cd5d293b38ce60"
+  },
+  "name": "Coffee",
+  "__v": 0,
+  "image_url": "c4fe361288ee72741633bb0f201fbd10.png"
+},
+{
+  "_id": {
+    "$oid": "6656d7c962cd5d293b38ce6b"
+  },
+  "name": "Fruity",
+  "image_url": "438b0e11379d922246deabc129dc72eb.png",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66583f2903f7d24f4b81ae9e"
+  },
+  "name": "Signature",
+  "image_url": "efd04488b453b69e9a2c42eb6955e6e9.png",
+  "__v": 0
+}]
