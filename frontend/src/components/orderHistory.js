@@ -60,7 +60,7 @@ const OrderHistory = () => {
         <>
         {showOrderHistory &&(
         <div>
-        <div className="orderHistoryContainer mt-5">
+        <div className="orderHistoryContainer">
             <h2 className="orderHistoryTitle">Order History</h2>
             <table className="orderHistoryTable table table-striped table-bordered">
                 <thead>
@@ -128,7 +128,7 @@ const OrderHistory = () => {
             </table>
             
         </div>
-        <button onClick={handleBackClick} className='btn backEdit'>Back</button>
+        <button onClick={handleBackClick} className='btnBackEdit'>Back</button>
     </div>
     )
     }

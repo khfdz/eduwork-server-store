@@ -133,7 +133,7 @@ const EditAddress = ({ userId }) => {
                             </form>
                             <div className="address-buttons">
                                 {addresses.map((address, index) => (
-                                    <button key={index} onClick={() => handleSelectAddress(index)} className={index === currentIndex ? "buttonActive" : ""}>{index + 1}</button>
+                                    <button key={index} onClick={() => handleSelectAddress(index)} className={index === currentIndex ? "buttonActive" : "buttonNonActive"}>{index + 1}</button>
                                 ))}
                             </div>
                         </div>

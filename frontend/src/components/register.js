@@ -44,7 +44,7 @@ const Register = () => {
                             <div className="">
                                 <input
                                     type="text"
-                                    className="formRegister"
+                                    className="formLogin"
                                     id="fullName"
                                     placeholder="Enter your full name"
                                     value={fullName}
@@ -54,7 +54,7 @@ const Register = () => {
                             <div className="">
                                 <input
                                     type="text"
-                                    className="formRegister"
+                                    className="formLogin"
                                     id="email"
                                     placeholder="Enter email"
                                     value={email}
@@ -64,7 +64,7 @@ const Register = () => {
                             <div className="">
                                 <input
                                     type="password"
-                                    className="formRegister"
+                                    className="formLogin"
                                     id="password"
                                     placeholder="Password"
                                     value={password}

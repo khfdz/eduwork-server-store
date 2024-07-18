@@ -1,14 +1,12 @@
-.login-title {
 
-}
 
 .login-container {
     display: flex;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 20px;
     background-color: #e52269;
     border-radius: 30px;
-    height: 700px;
+    height: 450px;
     align-items: center;
     justify-content: center;
 }
@@ -17,7 +15,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 300px;
+    width: 250px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -37,8 +35,12 @@
 
 .btn {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
+    height: 25px;
+    font-size: 12px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     background-color: #e52269;
     border: none;
@@ -51,12 +53,15 @@
     background-color: #e52269;
     border: none;
     color: white;
+    display: flex; 
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 100%;
     height: 40px;
     border-radius: 10px;
+    text-align: center; 
 }
+
 
 
 

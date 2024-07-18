@@ -11,7 +11,7 @@ import { CartContext  } from '../../src/context/CartContext';
 
 
 const Profile = () => {
-    const {userData, setUserData,handleLogoutClick} = useContext(CartContext);
+    const {userData, handleLogoutClick} = useContext(CartContext);
     const [showLogin, setShowLogin] = useState(false); 
     const [showRegister, setShowRegister] = useState(false);
     const [showAddAddress, setShowAddAddress] = useState(false);
@@ -76,10 +76,12 @@ const Profile = () => {
                             </table>
                         </div>
                         <Address userId={userData._id} />
-                        <button onClick={handleAddAddressClick} className='btn AddAddress' >Add Address</button>
-                        <button onClick={handleEditAddressClick} className='btn EditAddress' >Edit Address</button>
-                        <button onClick={handleShowOrderHistoryClick} className='btn OrderHistory'>Order History</button>
-                        <button onClick={handleLogoutClick} className="btn Logout">Logout</button>
+                        <div className='ButtonProfile'>
+                        <button onClick={handleAddAddressClick} className='AddAddress' >Add Address</button>
+                        <button onClick={handleEditAddressClick} className='EditAddress' >Edit Address</button>
+                        <button onClick={handleShowOrderHistoryClick} className='OrderHistory'>Order History</button>
+                        <button onClick={handleLogoutClick} className="Logout">Logout</button>
+                        </div>
                     </div>
                 </div>
             )}

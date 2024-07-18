@@ -1,18 +1,10 @@
-/* .address-details {
-    background-color: aqua;
-    border-radius: 30px;
-    height: 500px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 10px;
-} */
-
 .address-container {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 20px;
-    background-color: #e52269;
+    /* background-color: #e52269; */
     border-radius: 30px;
-    height: 450px;
+    height: 180px;
+    margin-bottom: 110px;
 }
 
 .submitAddAddress {
@@ -22,7 +14,7 @@
 .form-group {
     margin-top: 40px;
     margin-bottom: -30px;
-    font-size: 20px;
+    font-size: 8px; /* Ukuran font diperkecil */
     color: white;
 }
 
@@ -33,24 +25,24 @@
     border: none;
     border-radius: 10px;
     width: 100%;
-    font-size: 20PX;
+    font-size: 16px; /* Ukuran font diperkecil */
+    margin-top: 10px;
 }
 
 .formAddAddress {
     margin-top: 40px;
-    width: 90%;
+    width: 80%; /* Lebar form diperkecil */
 }
 
 .addAddress-container {
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: -100px;
     background-color: #e52269;
     border-radius: 30px;
-    height: 580px;
-    
+    height: 390px; /* Tinggi form diperkecil */
 }
 
 .add-address {
- 
-    margin-bottom: 50px;
+    margin-bottom: 27px;
 }
+

@@ -23,9 +23,10 @@
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
-  max-width: 90%; /* Maksimum lebar popup */
-  width: 60%; /* Lebar popup */
+  max-width: 100%; /* Maksimum lebar popup */
+  width: 90%; /* Lebar popup */
   margin: auto;
+  margin-top: 10px;
 }
 
 .closeButtonOrder {
@@ -34,12 +35,12 @@
   background-color: #e52269;
   color: white;
   border: none;
-  font-size: 16px;
+  font-size: 8px; /* Perkecil ukuran font */
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-  height: 40px;
-  width: 40px;
+  height: 15px;
+  width: 15px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -50,14 +51,14 @@
   background-color: #e52269;
   color: white;
   border: none;
-  font-size: 16px;
+  font-size: 12px; /* Perkecil ukuran font */
   font-weight: bold;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  height: 40px;
+  height: 25px;
   width: 150px; /* Lebar tombol */
-  margin-top: 20px; /* Memberi jarak antara tombol place order dengan konten lain */
+  margin-top: -5px; /* Memberi jarak antara tombol place order dengan konten lain */
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -67,7 +68,8 @@
 
 .orderTotalz {
   align-self: flex-end;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .selectColumn {
@@ -75,7 +77,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  
 }
 
 .orderItem {
@@ -86,3 +87,33 @@
   width: 10px !important; /* Atur lebar sesuai kebutuhan */
 }
 
+/* Table styling */
+table {
+  font-size: 10px; /* Perkecil ukuran teks untuk seluruh tabel */
+}
+
+thead th, tbody td {
+  padding: 3px; /* Perkecil padding agar teks tidak terlalu rapat */
+  font-size: 10px;
+}
+
+.orderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.orderSummary, .orderTotalz {
+  width: 48%;
+}
+
+.orderTotalz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.orderTotalz p {
+  margin: 0;
+  line-height: 1.2; /* Perkecil tinggi baris */
+}

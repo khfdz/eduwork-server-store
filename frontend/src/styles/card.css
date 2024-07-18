@@ -8,18 +8,18 @@
 }
 
 .card {
-    margin-left: 30px;
+    margin-left: 20px;
     margin-top: 100px;
     margin-bottom: 20px;
-    width: 300px;
-    height: 380px;
+    width: 265px;
+    height: 330px;
     border-radius: 20px;
     box-shadow: 0px 10px 30px -15px;
     border-style: none;
 }
 
 .card-img-top {
-    height: 200px;
+    height: 160px;
     object-fit: cover;
     display: flex;
     margin-top: -80px;
@@ -36,7 +36,7 @@
     align-items: left;   
     margin-top: 10px;
     font-weight: bolder;
-    font-size: 23px;
+    font-size:19px;
 }
 
 .description {   
@@ -77,6 +77,7 @@
     box-shadow: 1px 15px 10px -10px black;
     background-color: #e52269;
     color: white;
+    font-size: 14px;
 }
 
 
@@ -92,7 +93,7 @@
     font-size: 20px;
     font-weight: bolder;
     display: flex;
-    margin-left: 210px;
+    margin-left: 160px;
     margin-top: -50px;
     width: 40px;
     height: 40px;

@@ -1,117 +1,126 @@
-/* orderHistory.css */
-
 .orderHistoryContainer {
-    background-color: #e52269;
-    border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .orderHistoryTitle {
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
-  }
-  
-  .orderHistoryTable {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    align-items: center;
-    justify-content: center;
+  background-color: #e52269;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-top: 10px;
+}
 
-    
+.orderHistoryTitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+}
 
-  }
-  
-  .orderHistoryTable th {
-    text-align: center;
-  }
-  
-  .orderHistoryTable th:first-child {
-    width: 15%; /* Mengatur lebar kolom Order ID */
-  }
-  
-  .orderHistoryTable th:nth-child(2) {
-    width: 15%; /* Mengatur lebar kolom Action */
-  }
-  
-  .orderHistoryTable td,
-  .orderHistoryTable th {
-    padding: 8px;
-    text-align: center; /* Menengahkan teks di sel tabel */
-    vertical-align: middle; /* Menengahkan teks secara vertikal di dalam sel tabel */
-  }
-  
-  .orderHistoryTable th:first-child,
-  .orderHistoryTable td:first-child {
-    text-align: left;
-  }
-  
-  .orderHistoryButton {
-    margin-right: 5px;
-  }
-  
-  .invoiceContainer {
-    margin-top: 20px;
-  }
-  
-  .invoiceTitle {
-    text-align: center;
-    margin-top: 0;
-  }
-  
-  .invoiceInfo {
-    text-align: center;
-    margin: 5px 0;
-  }
-  
-  .invoiceTable {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-  }
-  
-  .invoiceTable th,
-  .invoiceTable td {
-    padding: 8px;
-    text-align: center;
-  }
-  
-  .invoiceTable th:first-child,
-  .invoiceTable td:first-child {
-    text-align: left;
-  }
-  
-  .invoiceTable th:last-child,
-  .invoiceTable td:last-child {
-    width: 20%;
-  }
-  
-  .orderOrder{
-    width: 60px !important;
-  }
+.orderHistoryTable {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* Mengurangi ukuran font tabel */
+}
 
-  .orderTotal {
-    width: 150px !important;
-  }
+.orderHistoryTable th {
+  text-align: center;
+}
 
-  .orderStatus {
-    width: 200px !important;
-  }
+.orderHistoryTable th:first-child {
+  width: 10%; /* Mengurangi lebar kolom Order ID */
+}
 
-  .orderInvoice{
-    width: 80px !important;
-  }
+.orderHistoryTable th:nth-child(2) {
+  width: 10%; /* Mengurangi lebar kolom Action */
+}
 
-  .showInvoiceButton {
-    background-color: #e52269;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
+.orderHistoryTable td,
+.orderHistoryTable th {
+  padding: 4px; /* Mengurangi padding */
+  text-align: center; /* Menengahkan teks di sel tabel */
+  vertical-align: middle; /* Menengahkan teks secara vertikal di dalam sel tabel */
+}
+
+.orderHistoryTable th:first-child,
+.orderHistoryTable td:first-child {
+  text-align: left;
+}
+
+.orderHistoryButton {
+  margin-right: 5px;
+}
+
+.invoiceContainer {
+  margin-top: 20px;
+}
+
+.invoiceTitle {
+  text-align: center;
+  margin-top: 0;
+}
+
+.invoiceInfo {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.invoiceTable {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 12px; /* Mengurangi ukuran font tabel */
+}
+
+.invoiceTable th,
+.invoiceTable td {
+  padding: 4px; /* Mengurangi padding */
+  text-align: center;
+}
+
+.invoiceTable th:first-child,
+.invoiceTable td:first-child {
+  text-align: left;
+}
+
+.invoiceTable th:last-child,
+.invoiceTable td:last-child {
+  width: 15%; /* Mengurangi lebar kolom terakhir */
+}
+
+.orderOrder {
+  width: 50px !important; /* Mengurangi lebar kolom */
+}
+
+.orderTotal {
+  width: 120px !important; /* Mengurangi lebar kolom */
+}
+
+.orderStatus {
+  width: 150px !important; /* Mengurangi lebar kolom */
+}
+
+.orderInvoice {
+  width: 60px !important; /* Mengurangi lebar kolom */
+}
+
+.showInvoiceButton {
+  background-color: #e52269;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.btnBackEdit {
+  background-color: #e52269;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer; 
+  width: 100%;
+  margin-top: 10px;
+}

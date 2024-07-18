@@ -73,9 +73,9 @@ const Address = ({ userId }) => {
                         </table>
                     </div>
                 ))}
-            <div className="address-buttons">
+            <div className="address-buttonszzz">
                 {Array.from({ length: totalPages }, (_, i) => (
-                    <button key={i + 1} onClick={() => selectPage(i + 1)} className={currentPage === i + 1 ? "buttonActive " : "d"}>{i + 1}</button>
+                    <button key={i + 1} onClick={() => selectPage(i + 1)} className={currentPage === i + 1 ? "buttonActiveAddress " : "buttonNonActiveAddress"}>{i + 1}</button>
                 ))}
             </div>
         </div>
