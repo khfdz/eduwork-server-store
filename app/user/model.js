@@ -1,68 +1,66 @@
 const mongoose = require('mongoose');
-const { Schema, model } = mongoose;
+const bcrypt = require('bcryptjs');
 const AutoIncrement = require('mongoose-sequence')(mongoose);
-const bcrypt = require('bcrypt');
-
-let userSchema = Schema({
-
-    full_name: {
-        type: String,
-        required: [true, 'Nama harus diisi'],
-        maxlength: [255, 'Panjang nama haurs antara 3 - 255 karakter'],
-        minlength: [3, 'Panjang nama harus antara 3 - 255 karakter']
-    },
-
-    customer_id: {
-        type: Number,
-    },
-
-    email: {
-        type: String,
-        required: [true, 'Email harus diisi'],
-        maxlength: [255, 'Panjang email maksimal 255 karakter'],
-        unique: true
-    },
-
-    password: {
-        type: String,
-        required: [true, 'Password harus diisi'],
-        maxlength: [255, 'Panjang password maksimal 255 karakter']
-    },
-
-    role: {
-        type: String,
-        enum: ['user', 'admin'],
-        default: 'user'
-    },
-
-    token: [String]
-
-    }, {
-        timestamps: true
-    })
-
-    userSchema.path('email').validate(function(value) {
-        const EMAIL_RE = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        return EMAIL_RE.test(value);
-        }, attr => `${attr.value} Harus merupakan email yang valid !`
-        )
-        
-        userSchema.path('email').validate(async function(value) {
-            try {
-                const count = await this.model('User').countDocuments({ email: value });
-                return count === 0;
-            } catch (err) {
-                throw err;
-            }
-        }, attr => `${attr.value} Sudah terdaftar !`);
-        
 
 const HASH_ROUNDS = 10;
+
+const userSchema = new mongoose.Schema({
+  us_id: {
+    type: Number,
+    unique: true,
+  },
+  us_name: {
+    type: String,
+    required: true,
+  },
+  us_password: {
+    type: String,
+    required: true,
+  },
+  us_email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  us_phone_number: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  us_address: {
+    type: String,
+    required: true,
+  },
+  us_created_at: {
+    type: Date,
+    default: Date.now,
+  },
+  us_updated_at: {
+    type: Date,
+    default: Date.now,
+  },
+}, { collection: 'Users' });
+
+userSchema.plugin(AutoIncrement, { inc_field: 'us_id' });
+
 userSchema.pre('save', function(next) {
-    this.password = bcrypt.hashSync(this.password, HASH_ROUNDS);
-    next();
-    })
+  this.us_password = bcrypt.hashSync(this.us_password, HASH_ROUNDS);
+  next();
+});
 
-    userSchema.plugin(AutoIncrement, { inc_field: 'customer_id' })
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.us_password);
+};
 
-    module.exports = model('User', userSchema)
+userSchema.path('us_email').validate(function(value) {
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+}, 'Invalid email address');
+
+userSchema.path('us_email').validate(async function (value) {
+  const user = await mongoose.models.Users.findOne({ us_email: value });
+  return !user;
+}, 'Email already exists');
+
+const User = mongoose.model('Users', userSchema);
+
+module.exports = User;
